@@ -10,14 +10,14 @@ from config import pyspark_config
 spark = SparkSession.builder.config(conf=pyspark_config.SPARK_CONF).getOrCreate()
 #%%
 count_of_events = 0
-for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
+for folder in os.listdir(os.path.join('/home/marc/Development/dshs', 'data/opta_input')):
     print(f"Folder: {folder}")
-    for file in [f for f in os.listdir(os.path.join('/home/marc/Development/dshs/uefa_project/project', 'data/opta_input', folder)) if '2' not in f and not f.startswith('.')]:
+    for file in [f for f in os.listdir(os.path.join('/home/marc/Development/dshs', 'data/opta_input', folder)) if '2' not in f and not f.startswith('.')]:
         print(f"File: {file}")
         # %% Arguments
-        filePath = os.path.join('/home/marc/Development/dshs/uefa_project/project', 'data/opta_input', folder,
+        filePath = os.path.join('/home/marc/Development/dshs', 'data/opta_input', folder,
                                 "{}".format(file))
-        filePath2 = os.path.join('/home/marc/Development/dshs/uefa_project/project', 'data/opta_input', folder,
+        filePath2 = os.path.join('/home/marc/Development/dshs', 'data/opta_input', folder,
                                  "{}2.xml".format(file.split('.')[0]))
 
         # %%
@@ -61,7 +61,7 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
         # %%
         df_events_summary = df_events.select(
             "_event_id", "_period_id", "_team_id", "_player_id", "_type_id", "_outcome",
-            F.explode('Q').alias('Qualifiers')
+            F.explode_outer('Q').alias('Qualifiers')
         ).withColumn(
             "pass_direction",
             F.when(
@@ -157,15 +157,7 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
                 "qualifiers": [5]
             },
             "Fouls": {
-                "event_type": [4]
-            },
-            "Fouls_won": {
                 "event_type": [4],
-                "outcome": 1
-            },
-            "Fouls_conceded": {
-                "event_type": [4],
-                "outcome": 0
             },
             "Corners": {
                 "event_type": [1],
@@ -185,45 +177,45 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
                 "event_type": [8]
             },
             "Tackles_won_with_possession": {
-                "event_type": 7,
+                "event_type": [7],
                 "outcome": 1
             },
             "Tackles_won_without_possession": {
-                "event_type": 7,
+                "event_type": [7],
                 "outcome": 0
             },
             "Tackle_lost_Challenge": {
-                "event_type": 45,
+                "event_type": [45],
                 "outcome": 0
             },
             "Saves": {
-                "event_type": 10,
+                "event_type": [10],
                 "outcome": 1
             },
             "Outfielder_saves": {
-                "event_type": 10,
+                "event_type": [10],
                 "outcome": 1,
                 "qualifiers": [94]
             },
             "Cross_claim_(gk)": {
-                "event_type": 11,
+                "event_type": [11],
                 "outcome": 1
             },
             "Clearance_won": {
-                "event_type": 12,
+                "event_type": [12],
                 "outcome": 1
             },
             "Clearance_lost": {
-                "event_type": 12,
+                "event_type": [12],
                 "outcome": 0
             },
             "Headed_clearance_won": {
-                "event_type": 12,
+                "event_type": [12],
                 "outcome": 1,
                 "qualifiers": [15]
             },
             "Headed_clearance_lost": {
-                "event_type": 12,
+                "event_type": [12],
                 "outcome": 0,
                 "qualifiers": [15]
             },
@@ -276,11 +268,11 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
             },
             "Yellow_card": {
                 "event_type": [17],
-                "qualifiers": [31,32]
+                "qualifiers": [31, 32]
             },
             "Red_card": {
                 "event_type": [17],
-                "qualifiers": [31,32]
+                "qualifiers": [33]
             },
             "Total_touches": {
                 "event_type": [1,2,3,7,8,9,10,11,12,13,14,15,16,41,42,50,52,54,61],
@@ -301,8 +293,7 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
                     F.when(
                         (F.col("_type_id").isin(metadata.get('event_type'))) &
                         (F.size(F.array_intersect(F.col('q_ids'),
-                                                  F.array([F.lit(x) for x in metadata.get("qualifiers")]))) == F.size(
-                            F.array([F.lit(x) for x in metadata.get("qualifiers")]))) &
+                                                  F.array([F.lit(x) for x in metadata.get("qualifiers")]))) >= 1) &
                         (F.size(F.array_intersect(F.col('q_ids'),
                                                   F.array([F.lit(x) for x in metadata.get("not_qualifiers")]))) == 0) &
                         (F.col('_outcome') == metadata.get("outcome")),
@@ -341,8 +332,7 @@ for folder in os.listdir(os.path.join('/home/project', 'data/opta_input')):
                     F.when(
                         (F.col("_type_id").isin(metadata.get('event_type'))) &
                         (F.size(F.array_intersect(F.col('q_ids'),
-                                                  F.array([F.lit(x) for x in metadata.get("qualifiers")]))) == F.size(
-                            F.array([F.lit(x) for x in metadata.get("qualifiers")]))),
+                                                  F.array([F.lit(x) for x in metadata.get("qualifiers")]))) >= 1),
                         1
                     )).alias(column_name) if ('qualifiers' in metadata) else
                 F.count(

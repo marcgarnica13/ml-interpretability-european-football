@@ -14,7 +14,10 @@ with open(os.path.join('..', 'data', 'soccerlogs_input', 'players.json'), 'r') a
     players_list = json.load(f)
 players_dict = {}
 for player in players_list:
-    players_dict[player['wyId']] = player['role']['name']
+    players_dict[player['wyId']] = {
+        "name": player.get('firstName', '') + player.get('middleName', '') + player.get('lastName', ''),
+        "role": player['role']['name']
+    }
 
 #%%
 with open(os.path.join('..', 'data', 'soccerlogs_input', 'matches', 'matches_European_Championship.json'), 'r') as f:
@@ -22,11 +25,12 @@ with open(os.path.join('..', 'data', 'soccerlogs_input', 'matches', 'matches_Eur
 matches_dict = {}
 for match in matches_list:
     for team, team_data in match['teamsData'].items():
-        matches_dict.setdefault(match['wyId'], {})[team] = [sub['playerIn'] for sub in team_data['formation']['substitutions']]
+        print(match)
+        matches_dict.setdefault(match['wyId'], {"label": match['label']})[team] = [sub['playerIn'] for sub in team_data['formation']['substitutions']]
 
 
 # %%
-filePath = os.path.join('data', 'soccerlogs_input', 'events', 'events_European_Championship.json')
+filePath = os.path.join('..', 'data', 'soccerlogs_input', 'events', 'events_European_Championship.json')
 
 df_match = spark.read.json(filePath)
 df_match.printSchema()
@@ -34,7 +38,7 @@ df_match.printSchema()
 # %%
 df_events = df_match.select(
     'matchId', 'eventId', 'matchPeriod', 'teamId', 'playerId', 'eventSec', 'positions', 'subEventId',
-    F.explode('tags').alias('tags_exploded')
+    F.explode_outer('tags').alias('tags_exploded')
 ).select(
     '*', F.col('tags_exploded.id').alias('tags')
 ).groupBy(
@@ -65,7 +69,7 @@ query_dictionary = {
     },
     "Unsuccessful_crosses": {
         "event_type": [80],
-        "qualifiers": [1801]
+        "qualifiers": [1802]
     },
     "Long_passes": {
         "event_type": [83]
@@ -106,9 +110,6 @@ query_dictionary = {
     "Fouls": {
         "event_type": [20, 21, 22, 23, 24, 25, 26, 27]
     },
-    "Fouls_conceded": {
-        "event_type": [20, 21, 22, 23, 24, 25, 26, 27]
-    },
     "Corners": {
         "event_type": [30],
     },
@@ -127,13 +128,8 @@ query_dictionary = {
         "event_type": [90, 91],
         "qualifiers": [1801]
     },
-    "Clearance_won": {
-        "event_type": [71],
-        "qualifiers": [1801]
-    },
-    "Clearance_lost": {
-        "event_type": [71],
-        "qualifiers": [1802]
+    "Clearances": {
+        "event_type": [71]
     },
     "Shots": {
         "event_type": [100]
@@ -192,8 +188,7 @@ auto_counters = df_events.groupBy(
         F.count(
             F.when(
                 (F.size(F.array_intersect(F.col('tags'),
-                                          F.array([F.lit(x) for x in metadata.get("qualifiers")]))) == F.size(
-                    F.array([F.lit(x) for x in metadata.get("qualifiers")]))),
+                                          F.array([F.lit(x) for x in metadata.get("qualifiers")]))) >= 1),
                 1
             )).alias(column_name)
         for column_name, metadata in query_dictionary.items()
@@ -203,9 +198,21 @@ auto_counters = df_events.groupBy(
 #%%
 printing_df = auto_counters.toPandas()
 printing_df['PlayerType'] = printing_df.apply(
-    lambda x: players_dict[x['playerId']] if x['playerId'] not in matches_dict[x['matchId']][str(x['teamId'])] else f"{players_dict[x['playerId']]}Substitute",
+    lambda x: players_dict[x['playerId']]['role'] if x['playerId'] not in matches_dict[x['matchId']][str(x['teamId'])] else f"{players_dict[x['playerId']]['role']}Substitute",
     axis=1
 )
+"""
+# Uncomment section in case you want to add referral names to match (label) and player (player first and last name)
 
+printing_df['PlayerName'] = printing_df.apply(
+    lambda x: players_dict[x['playerId']]['name'],
+    axis=1
+)
+printing_df['MatchLabel'] = printing_df.apply(
+    lambda x: matches_dict[x['matchId']]['label'],
+    axis=1
+)
+"""
 printing_df.to_csv("../data/soccerlogs_ds.csv", index=False)
+
 print("File saved")

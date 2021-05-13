@@ -1,0 +1,2700 @@
+2021-05-03 10:10:23,492:INFO:PyCaret Classification Module
+2021-05-03 10:10:23,492:INFO:version 2.0
+2021-05-03 10:10:23,492:INFO:Initializing setup()
+2021-05-03 10:10:23,492:INFO:USI: b6dc
+2021-05-03 10:10:23,492:INFO:setup(data=(4214, 32), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Yellow_card', 'Red_card'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-03 10:10:23,492:INFO:Checking environment
+2021-05-03 10:10:23,492:INFO:python_version: 3.6.9
+2021-05-03 10:10:23,492:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-03 10:10:23,492:INFO:machine: x86_64
+2021-05-03 10:10:23,494:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-03 10:10:23,494:INFO:Memory: svmem(total=16493772800, available=6083391488, percent=63.1, used=8703643648, free=1973030912, active=6575493120, inactive=2488082432, buffers=936341504, cached=4880756736, shared=1354043392, slab=566689792)
+2021-05-03 10:10:23,495:INFO:Physical Core: 4
+2021-05-03 10:10:23,495:INFO:Logical Core: 8
+2021-05-03 10:10:23,495:INFO:Checking libraries
+2021-05-03 10:10:23,495:INFO:pd==1.0.5
+2021-05-03 10:10:23,495:INFO:numpy==1.18.5
+2021-05-03 10:10:23,495:INFO:sklearn==0.23.2
+2021-05-03 10:10:23,495:INFO:xgboost==1.1.1
+2021-05-03 10:10:23,505:INFO:lightgbm==2.3.1
+2021-05-03 10:10:23,574:INFO:catboost==0.24
+2021-05-03 10:10:24,294:INFO:mlflow==1.10.0
+2021-05-03 10:10:24,294:INFO:Checking Exceptions
+2021-05-03 10:10:24,294:INFO:Preloading libraries
+2021-05-03 10:10:24,294:INFO:Preparing display monitor
+2021-05-03 10:10:24,316:INFO:Importing libraries
+2021-05-03 10:10:25,150:INFO:Copying data for preprocessing
+2021-05-03 10:10:25,151:INFO:Declaring global variables
+2021-05-03 10:10:25,166:INFO:Declaring preprocessing parameters
+2021-05-03 10:10:25,166:INFO:Importing preprocessing module
+2021-05-03 10:10:25,815:INFO:Creating preprocessing pipeline
+2021-05-03 10:10:29,811:INFO:Preprocessing pipeline created successfully
+2021-05-03 10:10:29,812:INFO:Creating grid variables
+2021-05-03 10:10:29,814:INFO:Creating global containers
+2021-05-03 10:10:29,930:INFO:create_model_container 0
+2021-05-03 10:10:29,930:INFO:master_model_container 0
+2021-05-03 10:10:29,930:INFO:display_container 0
+2021-05-03 10:10:29,938:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-03 10:10:29,938:INFO:setup() succesfully completed......................................
+2021-05-03 10:10:39,806:INFO:Initializing compare_models()
+2021-05-03 10:10:39,807:INFO:compare_models(blacklist=None, whitelist=None, fold=10, round=4, sort=Accuracy, n_select=1, turbo=True, verbose=True)
+2021-05-03 10:10:39,807:INFO:Checking exceptions
+2021-05-03 10:10:39,812:INFO:Preloading libraries
+2021-05-03 10:10:39,812:INFO:Preparing display monitor
+2021-05-03 10:10:39,855:INFO:Copying training dataset
+2021-05-03 10:10:39,856:INFO:Importing libraries
+2021-05-03 10:10:39,886:INFO:Importing untrained models
+2021-05-03 10:10:39,888:INFO:Import successful
+2021-05-03 10:10:39,899:INFO:Defining folds
+2021-05-03 10:10:39,900:INFO:Declaring metric variables
+2021-05-03 10:10:39,900:INFO:Initializing Logistic Regression
+2021-05-03 10:10:39,911:INFO:Initializing Fold 1
+2021-05-03 10:10:39,922:INFO:Fitting Model
+2021-05-03 10:10:40,031:INFO:Evaluating Metrics
+2021-05-03 10:10:40,049:INFO:Compiling Metrics
+2021-05-03 10:10:40,057:INFO:Initializing Fold 2
+2021-05-03 10:10:40,068:INFO:Fitting Model
+2021-05-03 10:10:40,177:INFO:Evaluating Metrics
+2021-05-03 10:10:40,191:INFO:Compiling Metrics
+2021-05-03 10:10:40,201:INFO:Initializing Fold 3
+2021-05-03 10:10:40,211:INFO:Fitting Model
+2021-05-03 10:10:40,333:INFO:Evaluating Metrics
+2021-05-03 10:10:40,348:INFO:Compiling Metrics
+2021-05-03 10:10:40,358:INFO:Initializing Fold 4
+2021-05-03 10:10:40,367:INFO:Fitting Model
+2021-05-03 10:10:40,501:INFO:Evaluating Metrics
+2021-05-03 10:10:40,517:INFO:Compiling Metrics
+2021-05-03 10:10:40,528:INFO:Initializing Fold 5
+2021-05-03 10:10:40,545:INFO:Fitting Model
+2021-05-03 10:10:40,646:INFO:Evaluating Metrics
+2021-05-03 10:10:40,661:INFO:Compiling Metrics
+2021-05-03 10:10:40,671:INFO:Initializing Fold 6
+2021-05-03 10:10:40,697:INFO:Fitting Model
+2021-05-03 10:10:40,811:INFO:Evaluating Metrics
+2021-05-03 10:10:40,825:INFO:Compiling Metrics
+2021-05-03 10:10:40,836:INFO:Initializing Fold 7
+2021-05-03 10:10:40,860:INFO:Fitting Model
+2021-05-03 10:10:41,042:INFO:Evaluating Metrics
+2021-05-03 10:10:41,060:INFO:Compiling Metrics
+2021-05-03 10:10:41,069:INFO:Initializing Fold 8
+2021-05-03 10:10:41,079:INFO:Fitting Model
+2021-05-03 10:10:41,195:INFO:Evaluating Metrics
+2021-05-03 10:10:41,212:INFO:Compiling Metrics
+2021-05-03 10:10:41,222:INFO:Initializing Fold 9
+2021-05-03 10:10:41,232:INFO:Fitting Model
+2021-05-03 10:10:41,411:INFO:Evaluating Metrics
+2021-05-03 10:10:41,425:INFO:Compiling Metrics
+2021-05-03 10:10:41,435:INFO:Initializing Fold 10
+2021-05-03 10:10:41,446:INFO:Fitting Model
+2021-05-03 10:10:41,624:INFO:Evaluating Metrics
+2021-05-03 10:10:41,639:INFO:Compiling Metrics
+2021-05-03 10:10:41,648:INFO:Calculating mean and std
+2021-05-03 10:10:41,648:INFO:Creating metrics dataframe
+2021-05-03 10:10:41,668:INFO:Initializing K Neighbors Classifier
+2021-05-03 10:10:41,681:INFO:Initializing Fold 1
+2021-05-03 10:10:41,691:INFO:Fitting Model
+2021-05-03 10:10:41,717:INFO:Evaluating Metrics
+2021-05-03 10:10:42,010:INFO:Compiling Metrics
+2021-05-03 10:10:42,025:INFO:Initializing Fold 2
+2021-05-03 10:10:42,041:INFO:Fitting Model
+2021-05-03 10:10:42,079:INFO:Evaluating Metrics
+2021-05-03 10:10:42,318:INFO:Compiling Metrics
+2021-05-03 10:10:42,324:INFO:Initializing Fold 3
+2021-05-03 10:10:42,329:INFO:Fitting Model
+2021-05-03 10:10:42,340:INFO:Evaluating Metrics
+2021-05-03 10:10:42,570:INFO:Compiling Metrics
+2021-05-03 10:10:42,576:INFO:Initializing Fold 4
+2021-05-03 10:10:42,584:INFO:Fitting Model
+2021-05-03 10:10:42,598:INFO:Evaluating Metrics
+2021-05-03 10:10:42,850:INFO:Compiling Metrics
+2021-05-03 10:10:42,858:INFO:Initializing Fold 5
+2021-05-03 10:10:42,865:INFO:Fitting Model
+2021-05-03 10:10:42,878:INFO:Evaluating Metrics
+2021-05-03 10:10:43,128:INFO:Compiling Metrics
+2021-05-03 10:10:43,135:INFO:Initializing Fold 6
+2021-05-03 10:10:43,141:INFO:Fitting Model
+2021-05-03 10:10:43,153:INFO:Evaluating Metrics
+2021-05-03 10:10:43,401:INFO:Compiling Metrics
+2021-05-03 10:10:43,409:INFO:Initializing Fold 7
+2021-05-03 10:10:43,416:INFO:Fitting Model
+2021-05-03 10:10:43,428:INFO:Evaluating Metrics
+2021-05-03 10:10:43,679:INFO:Compiling Metrics
+2021-05-03 10:10:43,686:INFO:Initializing Fold 8
+2021-05-03 10:10:43,692:INFO:Fitting Model
+2021-05-03 10:10:43,707:INFO:Evaluating Metrics
+2021-05-03 10:10:43,936:INFO:Compiling Metrics
+2021-05-03 10:10:43,942:INFO:Initializing Fold 9
+2021-05-03 10:10:43,953:INFO:Fitting Model
+2021-05-03 10:10:43,967:INFO:Evaluating Metrics
+2021-05-03 10:10:44,187:INFO:Compiling Metrics
+2021-05-03 10:10:44,192:INFO:Initializing Fold 10
+2021-05-03 10:10:44,197:INFO:Fitting Model
+2021-05-03 10:10:44,211:INFO:Evaluating Metrics
+2021-05-03 10:10:44,458:INFO:Compiling Metrics
+2021-05-03 10:10:44,465:INFO:Calculating mean and std
+2021-05-03 10:10:44,466:INFO:Creating metrics dataframe
+2021-05-03 10:10:44,478:INFO:Initializing Naive Bayes
+2021-05-03 10:10:44,485:INFO:Initializing Fold 1
+2021-05-03 10:10:44,493:INFO:Fitting Model
+2021-05-03 10:10:44,498:INFO:Evaluating Metrics
+2021-05-03 10:10:44,509:INFO:Compiling Metrics
+2021-05-03 10:10:44,522:INFO:Initializing Fold 2
+2021-05-03 10:10:44,533:INFO:Fitting Model
+2021-05-03 10:10:44,538:INFO:Evaluating Metrics
+2021-05-03 10:10:44,554:INFO:Compiling Metrics
+2021-05-03 10:10:44,563:INFO:Initializing Fold 3
+2021-05-03 10:10:44,572:INFO:Fitting Model
+2021-05-03 10:10:44,576:INFO:Evaluating Metrics
+2021-05-03 10:10:44,592:INFO:Compiling Metrics
+2021-05-03 10:10:44,604:INFO:Initializing Fold 4
+2021-05-03 10:10:44,614:INFO:Fitting Model
+2021-05-03 10:10:44,621:INFO:Evaluating Metrics
+2021-05-03 10:10:44,636:INFO:Compiling Metrics
+2021-05-03 10:10:44,646:INFO:Initializing Fold 5
+2021-05-03 10:10:44,655:INFO:Fitting Model
+2021-05-03 10:10:44,660:INFO:Evaluating Metrics
+2021-05-03 10:10:44,674:INFO:Compiling Metrics
+2021-05-03 10:10:44,684:INFO:Initializing Fold 6
+2021-05-03 10:10:44,691:INFO:Fitting Model
+2021-05-03 10:10:44,698:INFO:Evaluating Metrics
+2021-05-03 10:10:44,711:INFO:Compiling Metrics
+2021-05-03 10:10:44,719:INFO:Initializing Fold 7
+2021-05-03 10:10:44,731:INFO:Fitting Model
+2021-05-03 10:10:44,737:INFO:Evaluating Metrics
+2021-05-03 10:10:44,750:INFO:Compiling Metrics
+2021-05-03 10:10:44,764:INFO:Initializing Fold 8
+2021-05-03 10:10:44,774:INFO:Fitting Model
+2021-05-03 10:10:44,781:INFO:Evaluating Metrics
+2021-05-03 10:10:44,792:INFO:Compiling Metrics
+2021-05-03 10:10:44,802:INFO:Initializing Fold 9
+2021-05-03 10:10:44,811:INFO:Fitting Model
+2021-05-03 10:10:44,817:INFO:Evaluating Metrics
+2021-05-03 10:10:44,833:INFO:Compiling Metrics
+2021-05-03 10:10:44,841:INFO:Initializing Fold 10
+2021-05-03 10:10:44,852:INFO:Fitting Model
+2021-05-03 10:10:44,859:INFO:Evaluating Metrics
+2021-05-03 10:10:44,873:INFO:Compiling Metrics
+2021-05-03 10:10:44,885:INFO:Calculating mean and std
+2021-05-03 10:10:44,885:INFO:Creating metrics dataframe
+2021-05-03 10:10:44,907:INFO:Initializing Decision Tree Classifier
+2021-05-03 10:10:44,918:INFO:Initializing Fold 1
+2021-05-03 10:10:44,930:INFO:Fitting Model
+2021-05-03 10:10:44,956:INFO:Evaluating Metrics
+2021-05-03 10:10:44,974:INFO:Compiling Metrics
+2021-05-03 10:10:44,983:INFO:Initializing Fold 2
+2021-05-03 10:10:44,991:INFO:Fitting Model
+2021-05-03 10:10:45,015:INFO:Evaluating Metrics
+2021-05-03 10:10:45,028:INFO:Compiling Metrics
+2021-05-03 10:10:45,035:INFO:Initializing Fold 3
+2021-05-03 10:10:45,043:INFO:Fitting Model
+2021-05-03 10:10:45,061:INFO:Evaluating Metrics
+2021-05-03 10:10:45,072:INFO:Compiling Metrics
+2021-05-03 10:10:45,079:INFO:Initializing Fold 4
+2021-05-03 10:10:45,086:INFO:Fitting Model
+2021-05-03 10:10:45,106:INFO:Evaluating Metrics
+2021-05-03 10:10:45,117:INFO:Compiling Metrics
+2021-05-03 10:10:45,124:INFO:Initializing Fold 5
+2021-05-03 10:10:45,136:INFO:Fitting Model
+2021-05-03 10:10:45,158:INFO:Evaluating Metrics
+2021-05-03 10:10:45,168:INFO:Compiling Metrics
+2021-05-03 10:10:45,175:INFO:Initializing Fold 6
+2021-05-03 10:10:45,183:INFO:Fitting Model
+2021-05-03 10:10:45,203:INFO:Evaluating Metrics
+2021-05-03 10:10:45,214:INFO:Compiling Metrics
+2021-05-03 10:10:45,220:INFO:Initializing Fold 7
+2021-05-03 10:10:45,229:INFO:Fitting Model
+2021-05-03 10:10:45,249:INFO:Evaluating Metrics
+2021-05-03 10:10:45,258:INFO:Compiling Metrics
+2021-05-03 10:10:45,268:INFO:Initializing Fold 8
+2021-05-03 10:10:45,274:INFO:Fitting Model
+2021-05-03 10:10:45,295:INFO:Evaluating Metrics
+2021-05-03 10:10:45,303:INFO:Compiling Metrics
+2021-05-03 10:10:45,310:INFO:Initializing Fold 9
+2021-05-03 10:10:45,317:INFO:Fitting Model
+2021-05-03 10:10:45,335:INFO:Evaluating Metrics
+2021-05-03 10:10:45,346:INFO:Compiling Metrics
+2021-05-03 10:10:45,352:INFO:Initializing Fold 10
+2021-05-03 10:10:45,364:INFO:Fitting Model
+2021-05-03 10:10:45,384:INFO:Evaluating Metrics
+2021-05-03 10:10:45,393:INFO:Compiling Metrics
+2021-05-03 10:10:45,403:INFO:Calculating mean and std
+2021-05-03 10:10:45,403:INFO:Creating metrics dataframe
+2021-05-03 10:10:45,422:INFO:Initializing SVM - Linear Kernel
+2021-05-03 10:10:45,432:INFO:Initializing Fold 1
+2021-05-03 10:10:45,442:INFO:Fitting Model
+2021-05-03 10:10:45,483:INFO:Evaluating Metrics
+2021-05-03 10:10:45,483:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,499:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,515:INFO:Compiling Metrics
+2021-05-03 10:10:45,540:INFO:Initializing Fold 2
+2021-05-03 10:10:45,556:INFO:Fitting Model
+2021-05-03 10:10:45,596:INFO:Evaluating Metrics
+2021-05-03 10:10:45,596:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,604:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,612:INFO:Compiling Metrics
+2021-05-03 10:10:45,625:INFO:Initializing Fold 3
+2021-05-03 10:10:45,639:INFO:Fitting Model
+2021-05-03 10:10:45,685:INFO:Evaluating Metrics
+2021-05-03 10:10:45,685:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,698:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,704:INFO:Compiling Metrics
+2021-05-03 10:10:45,718:INFO:Initializing Fold 4
+2021-05-03 10:10:45,734:INFO:Fitting Model
+2021-05-03 10:10:45,766:INFO:Evaluating Metrics
+2021-05-03 10:10:45,766:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,774:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,782:INFO:Compiling Metrics
+2021-05-03 10:10:45,796:INFO:Initializing Fold 5
+2021-05-03 10:10:45,827:INFO:Fitting Model
+2021-05-03 10:10:45,875:INFO:Evaluating Metrics
+2021-05-03 10:10:45,875:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,885:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,889:INFO:Compiling Metrics
+2021-05-03 10:10:45,903:INFO:Initializing Fold 6
+2021-05-03 10:10:45,915:INFO:Fitting Model
+2021-05-03 10:10:45,951:INFO:Evaluating Metrics
+2021-05-03 10:10:45,951:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:45,960:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:45,965:INFO:Compiling Metrics
+2021-05-03 10:10:45,977:INFO:Initializing Fold 7
+2021-05-03 10:10:45,989:INFO:Fitting Model
+2021-05-03 10:10:46,032:INFO:Evaluating Metrics
+2021-05-03 10:10:46,032:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,045:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,050:INFO:Compiling Metrics
+2021-05-03 10:10:46,064:INFO:Initializing Fold 8
+2021-05-03 10:10:46,075:INFO:Fitting Model
+2021-05-03 10:10:46,103:INFO:Evaluating Metrics
+2021-05-03 10:10:46,103:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,116:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,121:INFO:Compiling Metrics
+2021-05-03 10:10:46,137:INFO:Initializing Fold 9
+2021-05-03 10:10:46,149:INFO:Fitting Model
+2021-05-03 10:10:46,181:INFO:Evaluating Metrics
+2021-05-03 10:10:46,181:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,202:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,213:INFO:Compiling Metrics
+2021-05-03 10:10:46,224:INFO:Initializing Fold 10
+2021-05-03 10:10:46,236:INFO:Fitting Model
+2021-05-03 10:10:46,255:INFO:Evaluating Metrics
+2021-05-03 10:10:46,255:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,261:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,263:INFO:Compiling Metrics
+2021-05-03 10:10:46,270:INFO:Calculating mean and std
+2021-05-03 10:10:46,271:INFO:Creating metrics dataframe
+2021-05-03 10:10:46,289:INFO:Initializing Ridge Classifier
+2021-05-03 10:10:46,297:INFO:Initializing Fold 1
+2021-05-03 10:10:46,304:INFO:Fitting Model
+2021-05-03 10:10:46,319:INFO:Evaluating Metrics
+2021-05-03 10:10:46,319:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,326:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,331:INFO:Compiling Metrics
+2021-05-03 10:10:46,343:INFO:Initializing Fold 2
+2021-05-03 10:10:46,356:INFO:Fitting Model
+2021-05-03 10:10:46,367:INFO:Evaluating Metrics
+2021-05-03 10:10:46,367:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,373:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,378:INFO:Compiling Metrics
+2021-05-03 10:10:46,390:INFO:Initializing Fold 3
+2021-05-03 10:10:46,403:INFO:Fitting Model
+2021-05-03 10:10:46,414:INFO:Evaluating Metrics
+2021-05-03 10:10:46,414:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,420:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,426:INFO:Compiling Metrics
+2021-05-03 10:10:46,438:INFO:Initializing Fold 4
+2021-05-03 10:10:46,451:INFO:Fitting Model
+2021-05-03 10:10:46,468:INFO:Evaluating Metrics
+2021-05-03 10:10:46,468:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,474:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,480:INFO:Compiling Metrics
+2021-05-03 10:10:46,491:INFO:Initializing Fold 5
+2021-05-03 10:10:46,504:INFO:Fitting Model
+2021-05-03 10:10:46,514:INFO:Evaluating Metrics
+2021-05-03 10:10:46,514:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,520:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,525:INFO:Compiling Metrics
+2021-05-03 10:10:46,538:INFO:Initializing Fold 6
+2021-05-03 10:10:46,551:INFO:Fitting Model
+2021-05-03 10:10:46,560:INFO:Evaluating Metrics
+2021-05-03 10:10:46,560:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,573:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,578:INFO:Compiling Metrics
+2021-05-03 10:10:46,590:INFO:Initializing Fold 7
+2021-05-03 10:10:46,603:INFO:Fitting Model
+2021-05-03 10:10:46,612:INFO:Evaluating Metrics
+2021-05-03 10:10:46,613:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,619:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,624:INFO:Compiling Metrics
+2021-05-03 10:10:46,637:INFO:Initializing Fold 8
+2021-05-03 10:10:46,647:INFO:Fitting Model
+2021-05-03 10:10:46,656:INFO:Evaluating Metrics
+2021-05-03 10:10:46,656:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,662:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,667:INFO:Compiling Metrics
+2021-05-03 10:10:46,678:INFO:Initializing Fold 9
+2021-05-03 10:10:46,689:INFO:Fitting Model
+2021-05-03 10:10:46,702:INFO:Evaluating Metrics
+2021-05-03 10:10:46,702:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,708:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,713:INFO:Compiling Metrics
+2021-05-03 10:10:46,725:INFO:Initializing Fold 10
+2021-05-03 10:10:46,734:INFO:Fitting Model
+2021-05-03 10:10:46,753:INFO:Evaluating Metrics
+2021-05-03 10:10:46,753:WARNING:model has no predict_proba attribute. pred_prob set to 0.00
+2021-05-03 10:10:46,761:WARNING:model has no predict_proba attribute. AUC set to 0.00
+2021-05-03 10:10:46,766:INFO:Compiling Metrics
+2021-05-03 10:10:46,778:INFO:Calculating mean and std
+2021-05-03 10:10:46,778:INFO:Creating metrics dataframe
+2021-05-03 10:10:46,805:INFO:Initializing Random Forest Classifier
+2021-05-03 10:10:46,817:INFO:Initializing Fold 1
+2021-05-03 10:10:46,827:INFO:Fitting Model
+2021-05-03 10:10:46,969:INFO:Evaluating Metrics
+2021-05-03 10:10:47,200:INFO:Compiling Metrics
+2021-05-03 10:10:47,218:INFO:Initializing Fold 2
+2021-05-03 10:10:47,237:INFO:Fitting Model
+2021-05-03 10:10:47,367:INFO:Evaluating Metrics
+2021-05-03 10:10:47,605:INFO:Compiling Metrics
+2021-05-03 10:10:47,616:INFO:Initializing Fold 3
+2021-05-03 10:10:47,624:INFO:Fitting Model
+2021-05-03 10:10:47,735:INFO:Evaluating Metrics
+2021-05-03 10:10:47,977:INFO:Compiling Metrics
+2021-05-03 10:10:47,986:INFO:Initializing Fold 4
+2021-05-03 10:10:47,996:INFO:Fitting Model
+2021-05-03 10:10:48,113:INFO:Evaluating Metrics
+2021-05-03 10:10:48,357:INFO:Compiling Metrics
+2021-05-03 10:10:48,374:INFO:Initializing Fold 5
+2021-05-03 10:10:48,384:INFO:Fitting Model
+2021-05-03 10:10:48,496:INFO:Evaluating Metrics
+2021-05-03 10:10:48,745:INFO:Compiling Metrics
+2021-05-03 10:10:48,760:INFO:Initializing Fold 6
+2021-05-03 10:10:48,770:INFO:Fitting Model
+2021-05-03 10:10:48,882:INFO:Evaluating Metrics
+2021-05-03 10:10:49,103:INFO:Compiling Metrics
+2021-05-03 10:10:49,110:INFO:Initializing Fold 7
+2021-05-03 10:10:49,119:INFO:Fitting Model
+2021-05-03 10:10:49,232:INFO:Evaluating Metrics
+2021-05-03 10:10:49,468:INFO:Compiling Metrics
+2021-05-03 10:10:49,483:INFO:Initializing Fold 8
+2021-05-03 10:10:49,493:INFO:Fitting Model
+2021-05-03 10:10:49,609:INFO:Evaluating Metrics
+2021-05-03 10:10:49,848:INFO:Compiling Metrics
+2021-05-03 10:10:49,864:INFO:Initializing Fold 9
+2021-05-03 10:10:49,875:INFO:Fitting Model
+2021-05-03 10:10:49,989:INFO:Evaluating Metrics
+2021-05-03 10:10:50,226:INFO:Compiling Metrics
+2021-05-03 10:10:50,245:INFO:Initializing Fold 10
+2021-05-03 10:10:50,257:INFO:Fitting Model
+2021-05-03 10:10:50,376:INFO:Evaluating Metrics
+2021-05-03 10:10:50,616:INFO:Compiling Metrics
+2021-05-03 10:10:50,633:INFO:Calculating mean and std
+2021-05-03 10:10:50,633:INFO:Creating metrics dataframe
+2021-05-03 10:10:50,652:INFO:Initializing Quadratic Discriminant Analysis
+2021-05-03 10:10:50,659:INFO:Initializing Fold 1
+2021-05-03 10:10:50,666:INFO:Fitting Model
+2021-05-03 10:10:50,718:INFO:Evaluating Metrics
+2021-05-03 10:10:50,762:INFO:Compiling Metrics
+2021-05-03 10:10:50,785:INFO:Initializing Fold 2
+2021-05-03 10:10:50,806:INFO:Fitting Model
+2021-05-03 10:10:50,831:INFO:Evaluating Metrics
+2021-05-03 10:10:50,871:INFO:Compiling Metrics
+2021-05-03 10:10:50,895:INFO:Initializing Fold 3
+2021-05-03 10:10:50,907:INFO:Fitting Model
+2021-05-03 10:10:50,920:INFO:Evaluating Metrics
+2021-05-03 10:10:50,953:INFO:Compiling Metrics
+2021-05-03 10:10:50,964:INFO:Initializing Fold 4
+2021-05-03 10:10:50,975:INFO:Fitting Model
+2021-05-03 10:10:51,004:INFO:Evaluating Metrics
+2021-05-03 10:10:51,030:INFO:Compiling Metrics
+2021-05-03 10:10:51,040:INFO:Initializing Fold 5
+2021-05-03 10:10:51,054:INFO:Fitting Model
+2021-05-03 10:10:51,083:INFO:Evaluating Metrics
+2021-05-03 10:10:51,123:INFO:Compiling Metrics
+2021-05-03 10:10:51,136:INFO:Initializing Fold 6
+2021-05-03 10:10:51,151:INFO:Fitting Model
+2021-05-03 10:10:51,194:INFO:Evaluating Metrics
+2021-05-03 10:10:51,223:INFO:Compiling Metrics
+2021-05-03 10:10:51,249:INFO:Initializing Fold 7
+2021-05-03 10:10:51,278:INFO:Fitting Model
+2021-05-03 10:10:51,291:INFO:Evaluating Metrics
+2021-05-03 10:10:51,332:INFO:Compiling Metrics
+2021-05-03 10:10:51,348:INFO:Initializing Fold 8
+2021-05-03 10:10:51,359:INFO:Fitting Model
+2021-05-03 10:10:51,398:INFO:Evaluating Metrics
+2021-05-03 10:10:51,420:INFO:Compiling Metrics
+2021-05-03 10:10:51,432:INFO:Initializing Fold 9
+2021-05-03 10:10:51,444:INFO:Fitting Model
+2021-05-03 10:10:51,464:INFO:Evaluating Metrics
+2021-05-03 10:10:51,488:INFO:Compiling Metrics
+2021-05-03 10:10:51,516:INFO:Initializing Fold 10
+2021-05-03 10:10:51,546:INFO:Fitting Model
+2021-05-03 10:10:51,587:INFO:Evaluating Metrics
+2021-05-03 10:10:51,605:INFO:Compiling Metrics
+2021-05-03 10:10:51,622:INFO:Calculating mean and std
+2021-05-03 10:10:51,622:INFO:Creating metrics dataframe
+2021-05-03 10:10:51,652:INFO:Initializing Ada Boost Classifier
+2021-05-03 10:10:51,669:INFO:Initializing Fold 1
+2021-05-03 10:10:51,684:INFO:Fitting Model
+2021-05-03 10:10:51,869:INFO:Evaluating Metrics
+2021-05-03 10:10:51,893:INFO:Compiling Metrics
+2021-05-03 10:10:51,899:INFO:Initializing Fold 2
+2021-05-03 10:10:51,904:INFO:Fitting Model
+2021-05-03 10:10:52,068:INFO:Evaluating Metrics
+2021-05-03 10:10:52,091:INFO:Compiling Metrics
+2021-05-03 10:10:52,096:INFO:Initializing Fold 3
+2021-05-03 10:10:52,101:INFO:Fitting Model
+2021-05-03 10:10:52,264:INFO:Evaluating Metrics
+2021-05-03 10:10:52,288:INFO:Compiling Metrics
+2021-05-03 10:10:52,294:INFO:Initializing Fold 4
+2021-05-03 10:10:52,300:INFO:Fitting Model
+2021-05-03 10:10:52,472:INFO:Evaluating Metrics
+2021-05-03 10:10:52,495:INFO:Compiling Metrics
+2021-05-03 10:10:52,501:INFO:Initializing Fold 5
+2021-05-03 10:10:52,508:INFO:Fitting Model
+2021-05-03 10:10:52,677:INFO:Evaluating Metrics
+2021-05-03 10:10:52,701:INFO:Compiling Metrics
+2021-05-03 10:10:52,706:INFO:Initializing Fold 6
+2021-05-03 10:10:52,712:INFO:Fitting Model
+2021-05-03 10:10:52,874:INFO:Evaluating Metrics
+2021-05-03 10:10:52,899:INFO:Compiling Metrics
+2021-05-03 10:10:52,904:INFO:Initializing Fold 7
+2021-05-03 10:10:52,909:INFO:Fitting Model
+2021-05-03 10:10:53,074:INFO:Evaluating Metrics
+2021-05-03 10:10:53,097:INFO:Compiling Metrics
+2021-05-03 10:10:53,102:INFO:Initializing Fold 8
+2021-05-03 10:10:53,108:INFO:Fitting Model
+2021-05-03 10:10:53,268:INFO:Evaluating Metrics
+2021-05-03 10:10:53,291:INFO:Compiling Metrics
+2021-05-03 10:10:53,296:INFO:Initializing Fold 9
+2021-05-03 10:10:53,302:INFO:Fitting Model
+2021-05-03 10:10:53,472:INFO:Evaluating Metrics
+2021-05-03 10:10:53,496:INFO:Compiling Metrics
+2021-05-03 10:10:53,502:INFO:Initializing Fold 10
+2021-05-03 10:10:53,507:INFO:Fitting Model
+2021-05-03 10:10:53,668:INFO:Evaluating Metrics
+2021-05-03 10:10:53,691:INFO:Compiling Metrics
+2021-05-03 10:10:53,697:INFO:Calculating mean and std
+2021-05-03 10:10:53,697:INFO:Creating metrics dataframe
+2021-05-03 10:10:53,709:INFO:Initializing Gradient Boosting Classifier
+2021-05-03 10:10:53,714:INFO:Initializing Fold 1
+2021-05-03 10:10:53,721:INFO:Fitting Model
+2021-05-03 10:10:54,138:INFO:Evaluating Metrics
+2021-05-03 10:10:54,147:INFO:Compiling Metrics
+2021-05-03 10:10:54,152:INFO:Initializing Fold 2
+2021-05-03 10:10:54,158:INFO:Fitting Model
+2021-05-03 10:10:54,559:INFO:Evaluating Metrics
+2021-05-03 10:10:54,567:INFO:Compiling Metrics
+2021-05-03 10:10:54,573:INFO:Initializing Fold 3
+2021-05-03 10:10:54,578:INFO:Fitting Model
+2021-05-03 10:10:54,997:INFO:Evaluating Metrics
+2021-05-03 10:10:55,006:INFO:Compiling Metrics
+2021-05-03 10:10:55,012:INFO:Initializing Fold 4
+2021-05-03 10:10:55,017:INFO:Fitting Model
+2021-05-03 10:10:55,437:INFO:Evaluating Metrics
+2021-05-03 10:10:55,446:INFO:Compiling Metrics
+2021-05-03 10:10:55,452:INFO:Initializing Fold 5
+2021-05-03 10:10:55,457:INFO:Fitting Model
+2021-05-03 10:10:55,934:INFO:Evaluating Metrics
+2021-05-03 10:10:55,943:INFO:Compiling Metrics
+2021-05-03 10:10:55,948:INFO:Initializing Fold 6
+2021-05-03 10:10:55,955:INFO:Fitting Model
+2021-05-03 10:10:56,366:INFO:Evaluating Metrics
+2021-05-03 10:10:56,375:INFO:Compiling Metrics
+2021-05-03 10:10:56,381:INFO:Initializing Fold 7
+2021-05-03 10:10:56,386:INFO:Fitting Model
+2021-05-03 10:10:56,799:INFO:Evaluating Metrics
+2021-05-03 10:10:56,807:INFO:Compiling Metrics
+2021-05-03 10:10:56,812:INFO:Initializing Fold 8
+2021-05-03 10:10:56,817:INFO:Fitting Model
+2021-05-03 10:10:57,231:INFO:Evaluating Metrics
+2021-05-03 10:10:57,240:INFO:Compiling Metrics
+2021-05-03 10:10:57,245:INFO:Initializing Fold 9
+2021-05-03 10:10:57,250:INFO:Fitting Model
+2021-05-03 10:10:57,659:INFO:Evaluating Metrics
+2021-05-03 10:10:57,668:INFO:Compiling Metrics
+2021-05-03 10:10:57,673:INFO:Initializing Fold 10
+2021-05-03 10:10:57,681:INFO:Fitting Model
+2021-05-03 10:10:58,086:INFO:Evaluating Metrics
+2021-05-03 10:10:58,095:INFO:Compiling Metrics
+2021-05-03 10:10:58,100:INFO:Calculating mean and std
+2021-05-03 10:10:58,100:INFO:Creating metrics dataframe
+2021-05-03 10:10:58,112:INFO:Initializing Linear Discriminant Analysis
+2021-05-03 10:10:58,118:INFO:Initializing Fold 1
+2021-05-03 10:10:58,123:INFO:Fitting Model
+2021-05-03 10:10:58,143:INFO:Evaluating Metrics
+2021-05-03 10:10:58,166:INFO:Compiling Metrics
+2021-05-03 10:10:58,181:INFO:Initializing Fold 2
+2021-05-03 10:10:58,193:INFO:Fitting Model
+2021-05-03 10:10:58,222:INFO:Evaluating Metrics
+2021-05-03 10:10:58,241:INFO:Compiling Metrics
+2021-05-03 10:10:58,252:INFO:Initializing Fold 3
+2021-05-03 10:10:58,266:INFO:Fitting Model
+2021-05-03 10:10:58,294:INFO:Evaluating Metrics
+2021-05-03 10:10:58,310:INFO:Compiling Metrics
+2021-05-03 10:10:58,321:INFO:Initializing Fold 4
+2021-05-03 10:10:58,332:INFO:Fitting Model
+2021-05-03 10:10:58,394:INFO:Evaluating Metrics
+2021-05-03 10:10:58,410:INFO:Compiling Metrics
+2021-05-03 10:10:58,421:INFO:Initializing Fold 5
+2021-05-03 10:10:58,435:INFO:Fitting Model
+2021-05-03 10:10:58,465:INFO:Evaluating Metrics
+2021-05-03 10:10:58,482:INFO:Compiling Metrics
+2021-05-03 10:10:58,492:INFO:Initializing Fold 6
+2021-05-03 10:10:58,503:INFO:Fitting Model
+2021-05-03 10:10:58,534:INFO:Evaluating Metrics
+2021-05-03 10:10:58,550:INFO:Compiling Metrics
+2021-05-03 10:10:58,563:INFO:Initializing Fold 7
+2021-05-03 10:10:58,574:INFO:Fitting Model
+2021-05-03 10:10:58,622:INFO:Evaluating Metrics
+2021-05-03 10:10:58,641:INFO:Compiling Metrics
+2021-05-03 10:10:58,652:INFO:Initializing Fold 8
+2021-05-03 10:10:58,664:INFO:Fitting Model
+2021-05-03 10:10:58,695:INFO:Evaluating Metrics
+2021-05-03 10:10:58,711:INFO:Compiling Metrics
+2021-05-03 10:10:58,723:INFO:Initializing Fold 9
+2021-05-03 10:10:58,734:INFO:Fitting Model
+2021-05-03 10:10:58,766:INFO:Evaluating Metrics
+2021-05-03 10:10:58,782:INFO:Compiling Metrics
+2021-05-03 10:10:58,795:INFO:Initializing Fold 10
+2021-05-03 10:10:58,807:INFO:Fitting Model
+2021-05-03 10:10:58,841:INFO:Evaluating Metrics
+2021-05-03 10:10:58,861:INFO:Compiling Metrics
+2021-05-03 10:10:58,875:INFO:Calculating mean and std
+2021-05-03 10:10:58,876:INFO:Creating metrics dataframe
+2021-05-03 10:10:58,908:INFO:Initializing Extra Trees Classifier
+2021-05-03 10:10:58,920:INFO:Initializing Fold 1
+2021-05-03 10:10:58,932:INFO:Fitting Model
+2021-05-03 10:10:59,316:INFO:Evaluating Metrics
+2021-05-03 10:10:59,555:INFO:Compiling Metrics
+2021-05-03 10:10:59,572:INFO:Initializing Fold 2
+2021-05-03 10:10:59,582:INFO:Fitting Model
+2021-05-03 10:10:59,861:INFO:Evaluating Metrics
+2021-05-03 10:11:00,100:INFO:Compiling Metrics
+2021-05-03 10:11:00,112:INFO:Initializing Fold 3
+2021-05-03 10:11:00,126:INFO:Fitting Model
+2021-05-03 10:11:00,377:INFO:Evaluating Metrics
+2021-05-03 10:11:00,616:INFO:Compiling Metrics
+2021-05-03 10:11:00,630:INFO:Initializing Fold 4
+2021-05-03 10:11:00,640:INFO:Fitting Model
+2021-05-03 10:11:00,891:INFO:Evaluating Metrics
+2021-05-03 10:11:01,130:INFO:Compiling Metrics
+2021-05-03 10:11:01,144:INFO:Initializing Fold 5
+2021-05-03 10:11:01,153:INFO:Fitting Model
+2021-05-03 10:11:01,403:INFO:Evaluating Metrics
+2021-05-03 10:11:01,641:INFO:Compiling Metrics
+2021-05-03 10:11:01,656:INFO:Initializing Fold 6
+2021-05-03 10:11:01,665:INFO:Fitting Model
+2021-05-03 10:11:01,913:INFO:Evaluating Metrics
+2021-05-03 10:11:02,149:INFO:Compiling Metrics
+2021-05-03 10:11:02,165:INFO:Initializing Fold 7
+2021-05-03 10:11:02,174:INFO:Fitting Model
+2021-05-03 10:11:02,426:INFO:Evaluating Metrics
+2021-05-03 10:11:02,655:INFO:Compiling Metrics
+2021-05-03 10:11:02,663:INFO:Initializing Fold 8
+2021-05-03 10:11:02,674:INFO:Fitting Model
+2021-05-03 10:11:02,934:INFO:Evaluating Metrics
+2021-05-03 10:11:03,284:INFO:Compiling Metrics
+2021-05-03 10:11:03,294:INFO:Initializing Fold 9
+2021-05-03 10:11:03,308:INFO:Fitting Model
+2021-05-03 10:11:03,588:INFO:Evaluating Metrics
+2021-05-03 10:11:03,836:INFO:Compiling Metrics
+2021-05-03 10:11:03,849:INFO:Initializing Fold 10
+2021-05-03 10:11:03,857:INFO:Fitting Model
+2021-05-03 10:11:04,145:INFO:Evaluating Metrics
+2021-05-03 10:11:04,497:INFO:Compiling Metrics
+2021-05-03 10:11:04,516:INFO:Calculating mean and std
+2021-05-03 10:11:04,517:INFO:Creating metrics dataframe
+2021-05-03 10:11:04,547:INFO:Initializing Extreme Gradient Boosting
+2021-05-03 10:11:04,560:INFO:Initializing Fold 1
+2021-05-03 10:11:04,576:INFO:Fitting Model
+2021-05-03 10:11:05,086:INFO:Evaluating Metrics
+2021-05-03 10:11:05,097:INFO:Compiling Metrics
+2021-05-03 10:11:05,103:INFO:Initializing Fold 2
+2021-05-03 10:11:05,108:INFO:Fitting Model
+2021-05-03 10:11:05,529:INFO:Evaluating Metrics
+2021-05-03 10:11:05,540:INFO:Compiling Metrics
+2021-05-03 10:11:05,546:INFO:Initializing Fold 3
+2021-05-03 10:11:05,551:INFO:Fitting Model
+2021-05-03 10:11:05,980:INFO:Evaluating Metrics
+2021-05-03 10:11:05,990:INFO:Compiling Metrics
+2021-05-03 10:11:05,995:INFO:Initializing Fold 4
+2021-05-03 10:11:06,001:INFO:Fitting Model
+2021-05-03 10:11:06,422:INFO:Evaluating Metrics
+2021-05-03 10:11:06,432:INFO:Compiling Metrics
+2021-05-03 10:11:06,438:INFO:Initializing Fold 5
+2021-05-03 10:11:06,444:INFO:Fitting Model
+2021-05-03 10:11:06,871:INFO:Evaluating Metrics
+2021-05-03 10:11:06,881:INFO:Compiling Metrics
+2021-05-03 10:11:06,887:INFO:Initializing Fold 6
+2021-05-03 10:11:06,893:INFO:Fitting Model
+2021-05-03 10:11:07,431:INFO:Evaluating Metrics
+2021-05-03 10:11:07,444:INFO:Compiling Metrics
+2021-05-03 10:11:07,454:INFO:Initializing Fold 7
+2021-05-03 10:11:07,464:INFO:Fitting Model
+2021-05-03 10:11:07,906:INFO:Evaluating Metrics
+2021-05-03 10:11:07,916:INFO:Compiling Metrics
+2021-05-03 10:11:07,921:INFO:Initializing Fold 8
+2021-05-03 10:11:07,926:INFO:Fitting Model
+2021-05-03 10:11:08,352:INFO:Evaluating Metrics
+2021-05-03 10:11:08,362:INFO:Compiling Metrics
+2021-05-03 10:11:08,367:INFO:Initializing Fold 9
+2021-05-03 10:11:08,373:INFO:Fitting Model
+2021-05-03 10:11:08,797:INFO:Evaluating Metrics
+2021-05-03 10:11:08,807:INFO:Compiling Metrics
+2021-05-03 10:11:08,813:INFO:Initializing Fold 10
+2021-05-03 10:11:08,818:INFO:Fitting Model
+2021-05-03 10:11:09,240:INFO:Evaluating Metrics
+2021-05-03 10:11:09,251:INFO:Compiling Metrics
+2021-05-03 10:11:09,256:INFO:Calculating mean and std
+2021-05-03 10:11:09,257:INFO:Creating metrics dataframe
+2021-05-03 10:11:09,271:INFO:Initializing Light Gradient Boosting Machine
+2021-05-03 10:11:09,278:INFO:Initializing Fold 1
+2021-05-03 10:11:09,285:INFO:Fitting Model
+2021-05-03 10:11:09,457:INFO:Evaluating Metrics
+2021-05-03 10:11:09,484:INFO:Compiling Metrics
+2021-05-03 10:11:09,494:INFO:Initializing Fold 2
+2021-05-03 10:11:09,507:INFO:Fitting Model
+2021-05-03 10:11:09,674:INFO:Evaluating Metrics
+2021-05-03 10:11:09,687:INFO:Compiling Metrics
+2021-05-03 10:11:09,693:INFO:Initializing Fold 3
+2021-05-03 10:11:09,698:INFO:Fitting Model
+2021-05-03 10:11:09,819:INFO:Evaluating Metrics
+2021-05-03 10:11:09,831:INFO:Compiling Metrics
+2021-05-03 10:11:09,837:INFO:Initializing Fold 4
+2021-05-03 10:11:09,842:INFO:Fitting Model
+2021-05-03 10:11:09,970:INFO:Evaluating Metrics
+2021-05-03 10:11:09,982:INFO:Compiling Metrics
+2021-05-03 10:11:09,988:INFO:Initializing Fold 5
+2021-05-03 10:11:09,993:INFO:Fitting Model
+2021-05-03 10:11:10,127:INFO:Evaluating Metrics
+2021-05-03 10:11:10,143:INFO:Compiling Metrics
+2021-05-03 10:11:10,150:INFO:Initializing Fold 6
+2021-05-03 10:11:10,159:INFO:Fitting Model
+2021-05-03 10:11:10,339:INFO:Evaluating Metrics
+2021-05-03 10:11:10,356:INFO:Compiling Metrics
+2021-05-03 10:11:10,364:INFO:Initializing Fold 7
+2021-05-03 10:11:10,377:INFO:Fitting Model
+2021-05-03 10:11:10,537:INFO:Evaluating Metrics
+2021-05-03 10:11:10,554:INFO:Compiling Metrics
+2021-05-03 10:11:10,561:INFO:Initializing Fold 8
+2021-05-03 10:11:10,570:INFO:Fitting Model
+2021-05-03 10:11:10,720:INFO:Evaluating Metrics
+2021-05-03 10:11:10,734:INFO:Compiling Metrics
+2021-05-03 10:11:10,740:INFO:Initializing Fold 9
+2021-05-03 10:11:10,746:INFO:Fitting Model
+2021-05-03 10:11:10,882:INFO:Evaluating Metrics
+2021-05-03 10:11:10,896:INFO:Compiling Metrics
+2021-05-03 10:11:10,903:INFO:Initializing Fold 10
+2021-05-03 10:11:10,909:INFO:Fitting Model
+2021-05-03 10:11:11,054:INFO:Evaluating Metrics
+2021-05-03 10:11:11,070:INFO:Compiling Metrics
+2021-05-03 10:11:11,077:INFO:Calculating mean and std
+2021-05-03 10:11:11,077:INFO:Creating metrics dataframe
+2021-05-03 10:11:11,100:INFO:Initializing CatBoost Classifier
+2021-05-03 10:11:11,108:INFO:Initializing Fold 1
+2021-05-03 10:11:11,119:INFO:Fitting Model
+2021-05-03 10:11:12,635:INFO:Evaluating Metrics
+2021-05-03 10:11:12,645:INFO:Compiling Metrics
+2021-05-03 10:11:12,651:INFO:Initializing Fold 2
+2021-05-03 10:11:12,656:INFO:Fitting Model
+2021-05-03 10:11:14,195:INFO:Evaluating Metrics
+2021-05-03 10:11:14,206:INFO:Compiling Metrics
+2021-05-03 10:11:14,213:INFO:Initializing Fold 3
+2021-05-03 10:11:14,220:INFO:Fitting Model
+2021-05-03 10:11:16,601:INFO:Evaluating Metrics
+2021-05-03 10:11:16,614:INFO:Compiling Metrics
+2021-05-03 10:11:16,621:INFO:Initializing Fold 4
+2021-05-03 10:11:16,629:INFO:Fitting Model
+2021-05-03 10:11:18,635:INFO:Evaluating Metrics
+2021-05-03 10:11:18,647:INFO:Compiling Metrics
+2021-05-03 10:11:18,654:INFO:Initializing Fold 5
+2021-05-03 10:11:18,661:INFO:Fitting Model
+2021-05-03 10:11:21,053:INFO:Evaluating Metrics
+2021-05-03 10:11:21,065:INFO:Compiling Metrics
+2021-05-03 10:11:21,072:INFO:Initializing Fold 6
+2021-05-03 10:11:21,080:INFO:Fitting Model
+2021-05-03 10:11:23,049:INFO:Evaluating Metrics
+2021-05-03 10:11:23,064:INFO:Compiling Metrics
+2021-05-03 10:11:23,073:INFO:Initializing Fold 7
+2021-05-03 10:11:23,082:INFO:Fitting Model
+2021-05-03 10:11:25,083:INFO:Evaluating Metrics
+2021-05-03 10:11:25,096:INFO:Compiling Metrics
+2021-05-03 10:11:25,103:INFO:Initializing Fold 8
+2021-05-03 10:11:25,110:INFO:Fitting Model
+2021-05-03 10:11:27,073:INFO:Evaluating Metrics
+2021-05-03 10:11:27,085:INFO:Compiling Metrics
+2021-05-03 10:11:27,092:INFO:Initializing Fold 9
+2021-05-03 10:11:27,100:INFO:Fitting Model
+2021-05-03 10:11:28,914:INFO:Evaluating Metrics
+2021-05-03 10:11:28,925:INFO:Compiling Metrics
+2021-05-03 10:11:28,932:INFO:Initializing Fold 10
+2021-05-03 10:11:28,939:INFO:Fitting Model
+2021-05-03 10:11:30,876:INFO:Evaluating Metrics
+2021-05-03 10:11:30,888:INFO:Compiling Metrics
+2021-05-03 10:11:30,895:INFO:Calculating mean and std
+2021-05-03 10:11:30,896:INFO:Creating metrics dataframe
+2021-05-03 10:11:30,921:INFO:Finalizing top_n models
+2021-05-03 10:11:30,921:INFO:SubProcess create_model() called ==================================
+2021-05-03 10:11:30,927:INFO:Initializing create_model()
+2021-05-03 10:11:30,927:INFO:create_model(estimator=lr, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=False, system=False)
+2021-05-03 10:11:30,927:INFO:Checking exceptions
+2021-05-03 10:11:30,928:INFO:Preloading libraries
+2021-05-03 10:11:30,928:INFO:Preparing display monitor
+2021-05-03 10:11:30,938:INFO:Copying training dataset
+2021-05-03 10:11:30,939:INFO:Importing libraries
+2021-05-03 10:11:30,940:INFO:Defining folds
+2021-05-03 10:11:30,940:INFO:Declaring metric variables
+2021-05-03 10:11:30,940:INFO:Importing untrained model
+2021-05-03 10:11:30,940:INFO:Logistic Regression Imported succesfully
+2021-05-03 10:11:30,941:INFO:Checking ensemble method
+2021-05-03 10:11:30,944:INFO:Initializing Fold 1
+2021-05-03 10:11:30,946:INFO:Fitting Model
+2021-05-03 10:11:31,094:INFO:Evaluating Metrics
+2021-05-03 10:11:31,117:INFO:Compiling Metrics
+2021-05-03 10:11:31,132:INFO:Initializing Fold 2
+2021-05-03 10:11:31,135:INFO:Fitting Model
+2021-05-03 10:11:31,250:INFO:Evaluating Metrics
+2021-05-03 10:11:31,272:INFO:Compiling Metrics
+2021-05-03 10:11:31,288:INFO:Initializing Fold 3
+2021-05-03 10:11:31,291:INFO:Fitting Model
+2021-05-03 10:11:31,427:INFO:Evaluating Metrics
+2021-05-03 10:11:31,469:INFO:Compiling Metrics
+2021-05-03 10:11:31,486:INFO:Initializing Fold 4
+2021-05-03 10:11:31,490:INFO:Fitting Model
+2021-05-03 10:11:31,596:INFO:Evaluating Metrics
+2021-05-03 10:11:31,620:INFO:Compiling Metrics
+2021-05-03 10:11:31,637:INFO:Initializing Fold 5
+2021-05-03 10:11:31,640:INFO:Fitting Model
+2021-05-03 10:11:31,780:INFO:Evaluating Metrics
+2021-05-03 10:11:31,806:INFO:Compiling Metrics
+2021-05-03 10:11:31,824:INFO:Initializing Fold 6
+2021-05-03 10:11:31,827:INFO:Fitting Model
+2021-05-03 10:11:31,995:INFO:Evaluating Metrics
+2021-05-03 10:11:32,033:INFO:Compiling Metrics
+2021-05-03 10:11:32,054:INFO:Initializing Fold 7
+2021-05-03 10:11:32,058:INFO:Fitting Model
+2021-05-03 10:11:32,172:INFO:Evaluating Metrics
+2021-05-03 10:11:32,194:INFO:Compiling Metrics
+2021-05-03 10:11:32,215:INFO:Initializing Fold 8
+2021-05-03 10:11:32,219:INFO:Fitting Model
+2021-05-03 10:11:32,494:INFO:Evaluating Metrics
+2021-05-03 10:11:32,540:INFO:Compiling Metrics
+2021-05-03 10:11:32,568:INFO:Initializing Fold 9
+2021-05-03 10:11:32,573:INFO:Fitting Model
+2021-05-03 10:11:32,776:INFO:Evaluating Metrics
+2021-05-03 10:11:32,810:INFO:Compiling Metrics
+2021-05-03 10:11:32,830:INFO:Initializing Fold 10
+2021-05-03 10:11:32,833:INFO:Fitting Model
+2021-05-03 10:11:33,012:INFO:Evaluating Metrics
+2021-05-03 10:11:33,038:INFO:Compiling Metrics
+2021-05-03 10:11:33,054:INFO:Calculating mean and std
+2021-05-03 10:11:33,057:INFO:Creating metrics dataframe
+2021-05-03 10:11:33,069:INFO:Finalizing model
+2021-05-03 10:11:33,223:INFO:Uploading results into container
+2021-05-03 10:11:33,223:INFO:Uploading model into container now
+2021-05-03 10:11:33,223:INFO:create_model_container: 1
+2021-05-03 10:11:33,224:INFO:master_model_container: 1
+2021-05-03 10:11:33,224:INFO:display_container: 1
+2021-05-03 10:11:33,225:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=3652, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2021-05-03 10:11:33,225:INFO:create_model() succesfully completed......................................
+2021-05-03 10:11:33,226:INFO:SubProcess create_model() end ==================================
+2021-05-03 10:11:33,409:INFO:create_model_container: 1
+2021-05-03 10:11:33,409:INFO:master_model_container: 1
+2021-05-03 10:11:33,409:INFO:display_container: 2
+2021-05-03 10:11:33,410:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=3652, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2021-05-03 10:11:33,410:INFO:compare_models() succesfully completed......................................
+2021-05-03 10:11:33,422:INFO:Initializing create_model()
+2021-05-03 10:11:33,422:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-03 10:11:33,422:INFO:Checking exceptions
+2021-05-03 10:11:33,422:INFO:Preloading libraries
+2021-05-03 10:11:33,422:INFO:Preparing display monitor
+2021-05-03 10:11:33,450:INFO:Copying training dataset
+2021-05-03 10:11:33,451:INFO:Importing libraries
+2021-05-03 10:11:33,451:INFO:Defining folds
+2021-05-03 10:11:33,452:INFO:Declaring metric variables
+2021-05-03 10:11:33,457:INFO:Importing untrained model
+2021-05-03 10:11:33,457:INFO:Decision Tree Classifier Imported succesfully
+2021-05-03 10:11:33,458:INFO:Checking ensemble method
+2021-05-03 10:11:33,471:INFO:Initializing Fold 1
+2021-05-03 10:11:33,480:INFO:Fitting Model
+2021-05-03 10:11:33,497:INFO:Evaluating Metrics
+2021-05-03 10:11:33,514:INFO:Compiling Metrics
+2021-05-03 10:11:33,543:INFO:Initializing Fold 2
+2021-05-03 10:11:33,551:INFO:Fitting Model
+2021-05-03 10:11:33,567:INFO:Evaluating Metrics
+2021-05-03 10:11:33,582:INFO:Compiling Metrics
+2021-05-03 10:11:33,608:INFO:Initializing Fold 3
+2021-05-03 10:11:33,618:INFO:Fitting Model
+2021-05-03 10:11:33,634:INFO:Evaluating Metrics
+2021-05-03 10:11:33,649:INFO:Compiling Metrics
+2021-05-03 10:11:33,678:INFO:Initializing Fold 4
+2021-05-03 10:11:33,687:INFO:Fitting Model
+2021-05-03 10:11:33,702:INFO:Evaluating Metrics
+2021-05-03 10:11:33,716:INFO:Compiling Metrics
+2021-05-03 10:11:33,741:INFO:Initializing Fold 5
+2021-05-03 10:11:33,750:INFO:Fitting Model
+2021-05-03 10:11:33,764:INFO:Evaluating Metrics
+2021-05-03 10:11:33,776:INFO:Compiling Metrics
+2021-05-03 10:11:33,801:INFO:Initializing Fold 6
+2021-05-03 10:11:33,807:INFO:Fitting Model
+2021-05-03 10:11:33,821:INFO:Evaluating Metrics
+2021-05-03 10:11:33,833:INFO:Compiling Metrics
+2021-05-03 10:11:33,856:INFO:Initializing Fold 7
+2021-05-03 10:11:33,865:INFO:Fitting Model
+2021-05-03 10:11:33,882:INFO:Evaluating Metrics
+2021-05-03 10:11:33,900:INFO:Compiling Metrics
+2021-05-03 10:11:33,922:INFO:Initializing Fold 8
+2021-05-03 10:11:33,931:INFO:Fitting Model
+2021-05-03 10:11:33,944:INFO:Evaluating Metrics
+2021-05-03 10:11:33,955:INFO:Compiling Metrics
+2021-05-03 10:11:33,981:INFO:Initializing Fold 9
+2021-05-03 10:11:33,989:INFO:Fitting Model
+2021-05-03 10:11:34,002:INFO:Evaluating Metrics
+2021-05-03 10:11:34,013:INFO:Compiling Metrics
+2021-05-03 10:11:34,039:INFO:Initializing Fold 10
+2021-05-03 10:11:34,047:INFO:Fitting Model
+2021-05-03 10:11:34,064:INFO:Evaluating Metrics
+2021-05-03 10:11:34,082:INFO:Compiling Metrics
+2021-05-03 10:11:34,106:INFO:Calculating mean and std
+2021-05-03 10:11:34,108:INFO:Creating metrics dataframe
+2021-05-03 10:11:34,125:INFO:Finalizing model
+2021-05-03 10:11:34,148:INFO:Uploading results into container
+2021-05-03 10:11:34,148:INFO:Uploading model into container now
+2021-05-03 10:11:34,210:INFO:create_model_container: 2
+2021-05-03 10:11:34,210:INFO:master_model_container: 2
+2021-05-03 10:11:34,210:INFO:display_container: 3
+2021-05-03 10:11:34,210:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best')
+2021-05-03 10:11:34,210:INFO:create_model() succesfully completed......................................
+2021-05-03 10:11:48,120:INFO:Initializing create_model()
+2021-05-03 10:11:48,121:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-03 10:11:48,121:INFO:Checking exceptions
+2021-05-03 10:11:48,121:INFO:Preloading libraries
+2021-05-03 10:11:48,121:INFO:Preparing display monitor
+2021-05-03 10:11:48,154:INFO:Copying training dataset
+2021-05-03 10:11:48,155:INFO:Importing libraries
+2021-05-03 10:11:48,156:INFO:Defining folds
+2021-05-03 10:11:48,157:INFO:Declaring metric variables
+2021-05-03 10:11:48,164:INFO:Importing untrained model
+2021-05-03 10:11:48,164:INFO:Decision Tree Classifier Imported succesfully
+2021-05-03 10:11:48,164:INFO:Checking ensemble method
+2021-05-03 10:11:48,180:INFO:Initializing Fold 1
+2021-05-03 10:11:48,193:INFO:Fitting Model
+2021-05-03 10:11:48,215:INFO:Evaluating Metrics
+2021-05-03 10:11:48,232:INFO:Compiling Metrics
+2021-05-03 10:11:48,261:INFO:Initializing Fold 2
+2021-05-03 10:11:48,274:INFO:Fitting Model
+2021-05-03 10:11:48,291:INFO:Evaluating Metrics
+2021-05-03 10:11:48,308:INFO:Compiling Metrics
+2021-05-03 10:11:48,336:INFO:Initializing Fold 3
+2021-05-03 10:11:48,343:INFO:Fitting Model
+2021-05-03 10:11:48,361:INFO:Evaluating Metrics
+2021-05-03 10:11:48,378:INFO:Compiling Metrics
+2021-05-03 10:11:48,406:INFO:Initializing Fold 4
+2021-05-03 10:11:48,420:INFO:Fitting Model
+2021-05-03 10:11:48,435:INFO:Evaluating Metrics
+2021-05-03 10:11:48,455:INFO:Compiling Metrics
+2021-05-03 10:11:48,482:INFO:Initializing Fold 5
+2021-05-03 10:11:48,494:INFO:Fitting Model
+2021-05-03 10:11:48,510:INFO:Evaluating Metrics
+2021-05-03 10:11:48,524:INFO:Compiling Metrics
+2021-05-03 10:11:48,552:INFO:Initializing Fold 6
+2021-05-03 10:11:48,562:INFO:Fitting Model
+2021-05-03 10:11:48,577:INFO:Evaluating Metrics
+2021-05-03 10:11:48,591:INFO:Compiling Metrics
+2021-05-03 10:11:48,619:INFO:Initializing Fold 7
+2021-05-03 10:11:48,627:INFO:Fitting Model
+2021-05-03 10:11:48,643:INFO:Evaluating Metrics
+2021-05-03 10:11:48,655:INFO:Compiling Metrics
+2021-05-03 10:11:48,684:INFO:Initializing Fold 8
+2021-05-03 10:11:48,691:INFO:Fitting Model
+2021-05-03 10:11:48,707:INFO:Evaluating Metrics
+2021-05-03 10:11:48,720:INFO:Compiling Metrics
+2021-05-03 10:11:48,747:INFO:Initializing Fold 9
+2021-05-03 10:11:48,755:INFO:Fitting Model
+2021-05-03 10:11:48,771:INFO:Evaluating Metrics
+2021-05-03 10:11:48,787:INFO:Compiling Metrics
+2021-05-03 10:11:48,816:INFO:Initializing Fold 10
+2021-05-03 10:11:48,824:INFO:Fitting Model
+2021-05-03 10:11:48,839:INFO:Evaluating Metrics
+2021-05-03 10:11:48,855:INFO:Compiling Metrics
+2021-05-03 10:11:48,885:INFO:Calculating mean and std
+2021-05-03 10:11:48,886:INFO:Creating metrics dataframe
+2021-05-03 10:11:48,901:INFO:Finalizing model
+2021-05-03 10:11:48,922:INFO:Uploading results into container
+2021-05-03 10:11:48,922:INFO:Uploading model into container now
+2021-05-03 10:11:48,995:INFO:create_model_container: 3
+2021-05-03 10:11:48,995:INFO:master_model_container: 3
+2021-05-03 10:11:48,995:INFO:display_container: 4
+2021-05-03 10:11:48,996:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best')
+2021-05-03 10:11:48,996:INFO:create_model() succesfully completed......................................
+2021-05-03 10:11:52,854:INFO:Initializing tune_model()
+2021-05-03 10:11:52,855:INFO:tune_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best'), fold=10, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, choose_better=False, verbose=True)
+2021-05-03 10:11:52,855:INFO:Checking exceptions
+2021-05-03 10:11:52,857:INFO:Preloading libraries
+2021-05-03 10:11:52,857:INFO:Preparing display monitor
+2021-05-03 10:11:52,880:INFO:Copying training dataset
+2021-05-03 10:11:52,882:INFO:Importing libraries
+2021-05-03 10:11:52,882:INFO:Checking base model
+2021-05-03 10:11:52,883:INFO:Base model : Decision Tree Classifier
+2021-05-03 10:11:52,883:INFO:Defining folds
+2021-05-03 10:11:52,884:INFO:Declaring metric variables
+2021-05-03 10:11:52,890:INFO:Defining Hyperparameters
+2021-05-03 10:11:52,890:INFO:Initializing RandomizedSearchCV
+2021-05-03 10:11:54,931:INFO:Random search completed
+2021-05-03 10:11:54,939:INFO:Initializing Fold 1
+2021-05-03 10:11:54,947:INFO:Fitting Model
+2021-05-03 10:11:54,959:INFO:Evaluating Metrics
+2021-05-03 10:11:54,970:INFO:Compiling Metrics
+2021-05-03 10:11:54,991:INFO:Initializing Fold 2
+2021-05-03 10:11:55,000:INFO:Fitting Model
+2021-05-03 10:11:55,020:INFO:Evaluating Metrics
+2021-05-03 10:11:55,033:INFO:Compiling Metrics
+2021-05-03 10:11:55,062:INFO:Initializing Fold 3
+2021-05-03 10:11:55,078:INFO:Fitting Model
+2021-05-03 10:11:55,095:INFO:Evaluating Metrics
+2021-05-03 10:11:55,115:INFO:Compiling Metrics
+2021-05-03 10:11:55,144:INFO:Initializing Fold 4
+2021-05-03 10:11:55,157:INFO:Fitting Model
+2021-05-03 10:11:55,179:INFO:Evaluating Metrics
+2021-05-03 10:11:55,191:INFO:Compiling Metrics
+2021-05-03 10:11:55,228:INFO:Initializing Fold 5
+2021-05-03 10:11:55,235:INFO:Fitting Model
+2021-05-03 10:11:55,253:INFO:Evaluating Metrics
+2021-05-03 10:11:55,274:INFO:Compiling Metrics
+2021-05-03 10:11:55,317:INFO:Initializing Fold 6
+2021-05-03 10:11:55,328:INFO:Fitting Model
+2021-05-03 10:11:55,345:INFO:Evaluating Metrics
+2021-05-03 10:11:55,361:INFO:Compiling Metrics
+2021-05-03 10:11:55,389:INFO:Initializing Fold 7
+2021-05-03 10:11:55,400:INFO:Fitting Model
+2021-05-03 10:11:55,420:INFO:Evaluating Metrics
+2021-05-03 10:11:55,436:INFO:Compiling Metrics
+2021-05-03 10:11:55,465:INFO:Initializing Fold 8
+2021-05-03 10:11:55,474:INFO:Fitting Model
+2021-05-03 10:11:55,495:INFO:Evaluating Metrics
+2021-05-03 10:11:55,513:INFO:Compiling Metrics
+2021-05-03 10:11:55,546:INFO:Initializing Fold 9
+2021-05-03 10:11:55,558:INFO:Fitting Model
+2021-05-03 10:11:55,577:INFO:Evaluating Metrics
+2021-05-03 10:11:55,593:INFO:Compiling Metrics
+2021-05-03 10:11:55,627:INFO:Initializing Fold 10
+2021-05-03 10:11:55,638:INFO:Fitting Model
+2021-05-03 10:11:55,654:INFO:Evaluating Metrics
+2021-05-03 10:11:55,668:INFO:Compiling Metrics
+2021-05-03 10:11:55,698:INFO:Calculating mean and std
+2021-05-03 10:11:55,699:INFO:Creating metrics dataframe
+2021-05-03 10:11:55,712:INFO:Finalizing model
+2021-05-03 10:11:55,732:INFO:Uploading results into container
+2021-05-03 10:11:55,732:INFO:Uploading model into container
+2021-05-03 10:11:55,807:INFO:create_model_container: 4
+2021-05-03 10:11:55,807:INFO:master_model_container: 4
+2021-05-03 10:11:55,807:INFO:display_container: 5
+2021-05-03 10:11:55,808:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=18, max_features=31, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=5, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best')
+2021-05-03 10:11:55,808:INFO:tune_model() succesfully completed......................................
+2021-05-03 10:12:29,920:INFO:Initializing plot_model()
+2021-05-03 10:12:29,923:INFO:plot_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best'), plot=feature, save=True, verbose=True, system=True)
+2021-05-03 10:12:29,923:INFO:Checking exceptions
+2021-05-03 10:12:29,927:INFO:Preloading libraries
+2021-05-03 10:12:29,928:INFO:Preparing display monitor
+2021-05-03 10:12:29,939:INFO:Importing libraries
+2021-05-03 10:12:29,941:INFO:plot type: feature
+2021-05-03 10:12:29,941:WARNING:No coef_ found. Trying feature_importances_
+2021-05-03 10:12:30,029:INFO:Saving 'Feature Importance.png' in current active directory
+2021-05-03 10:12:30,197:INFO:Visual Rendered Successfully
+2021-05-03 10:12:30,197:INFO:plot_model() succesfully completed......................................
+2021-05-03 10:13:30,858:INFO:Initializing interpret_model()
+2021-05-03 10:13:30,860:INFO:interpret_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=3652, splitter='best'), plot=summary, feature=None, observation=None)
+2021-05-03 10:13:30,860:INFO:Checking exceptions
+2021-05-03 10:13:30,957:INFO:Importing libraries
+2021-05-03 10:13:30,957:INFO:plot type: summary
+2021-05-03 10:13:30,957:INFO:model type detected: type 1
+2021-05-03 10:13:30,957:INFO:Creating TreeExplainer
+2021-05-03 10:13:30,958:INFO:Compiling shap values
+2021-05-03 10:13:31,325:INFO:Visual Rendered Successfully
+2021-05-03 10:13:31,325:INFO:interpret_model() succesfully completed......................................
+2021-05-03 10:20:16,457:INFO:PyCaret Classification Module
+2021-05-03 10:20:16,457:INFO:version 2.0
+2021-05-03 10:20:16,457:INFO:Initializing setup()
+2021-05-03 10:20:16,457:INFO:USI: 7886
+2021-05-03 10:20:16,457:INFO:setup(data=(4214, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Yellow_card', 'Red_card'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-03 10:20:16,457:INFO:Checking environment
+2021-05-03 10:20:16,457:INFO:python_version: 3.6.9
+2021-05-03 10:20:16,457:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-03 10:20:16,457:INFO:machine: x86_64
+2021-05-03 10:20:16,458:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-03 10:20:16,458:INFO:Memory: svmem(total=16493772800, available=4801843200, percent=70.9, used=9896013824, free=785022976, active=6869291008, inactive=3256565760, buffers=801030144, cached=5011705856, shared=1443483648, slab=590286848)
+2021-05-03 10:20:16,459:INFO:Physical Core: 4
+2021-05-03 10:20:16,459:INFO:Logical Core: 8
+2021-05-03 10:20:16,459:INFO:Checking libraries
+2021-05-03 10:20:16,459:INFO:pd==1.0.5
+2021-05-03 10:20:16,459:INFO:numpy==1.18.5
+2021-05-03 10:20:16,459:INFO:sklearn==0.23.2
+2021-05-03 10:20:16,459:INFO:xgboost==1.1.1
+2021-05-03 10:20:16,463:INFO:lightgbm==2.3.1
+2021-05-03 10:20:16,474:INFO:catboost==0.24
+2021-05-03 10:20:17,021:INFO:mlflow==1.10.0
+2021-05-03 10:20:17,021:INFO:Checking Exceptions
+2021-05-03 10:20:17,021:INFO:Preloading libraries
+2021-05-03 10:20:17,021:INFO:Preparing display monitor
+2021-05-03 10:20:17,048:INFO:Importing libraries
+2021-05-03 10:20:17,495:INFO:Copying data for preprocessing
+2021-05-03 10:20:17,496:INFO:Declaring global variables
+2021-05-03 10:20:17,508:INFO:Declaring preprocessing parameters
+2021-05-03 10:20:17,508:INFO:Importing preprocessing module
+2021-05-03 10:20:18,123:INFO:Creating preprocessing pipeline
+2021-05-03 10:20:20,008:INFO:Preprocessing pipeline created successfully
+2021-05-03 10:20:20,008:INFO:Creating grid variables
+2021-05-03 10:20:20,011:INFO:Creating global containers
+2021-05-03 10:20:20,112:INFO:create_model_container 0
+2021-05-03 10:20:20,112:INFO:master_model_container 0
+2021-05-03 10:20:20,112:INFO:display_container 0
+2021-05-03 10:20:20,119:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-03 10:20:20,120:INFO:setup() succesfully completed......................................
+2021-05-03 10:20:32,192:INFO:Initializing create_model()
+2021-05-03 10:20:32,193:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-03 10:20:32,193:INFO:Checking exceptions
+2021-05-03 10:20:32,193:INFO:Preloading libraries
+2021-05-03 10:20:32,193:INFO:Preparing display monitor
+2021-05-03 10:20:32,235:INFO:Copying training dataset
+2021-05-03 10:20:32,238:INFO:Importing libraries
+2021-05-03 10:20:32,239:INFO:Defining folds
+2021-05-03 10:20:32,240:INFO:Declaring metric variables
+2021-05-03 10:20:32,246:INFO:Importing untrained model
+2021-05-03 10:20:32,246:INFO:Decision Tree Classifier Imported succesfully
+2021-05-03 10:20:32,247:INFO:Checking ensemble method
+2021-05-03 10:20:32,265:INFO:Initializing Fold 1
+2021-05-03 10:20:32,278:INFO:Fitting Model
+2021-05-03 10:20:32,295:INFO:Evaluating Metrics
+2021-05-03 10:20:32,317:INFO:Compiling Metrics
+2021-05-03 10:20:32,343:INFO:Initializing Fold 2
+2021-05-03 10:20:32,353:INFO:Fitting Model
+2021-05-03 10:20:32,370:INFO:Evaluating Metrics
+2021-05-03 10:20:32,383:INFO:Compiling Metrics
+2021-05-03 10:20:32,413:INFO:Initializing Fold 3
+2021-05-03 10:20:32,422:INFO:Fitting Model
+2021-05-03 10:20:32,441:INFO:Evaluating Metrics
+2021-05-03 10:20:32,462:INFO:Compiling Metrics
+2021-05-03 10:20:32,495:INFO:Initializing Fold 4
+2021-05-03 10:20:32,508:INFO:Fitting Model
+2021-05-03 10:20:32,523:INFO:Evaluating Metrics
+2021-05-03 10:20:32,540:INFO:Compiling Metrics
+2021-05-03 10:20:32,563:INFO:Initializing Fold 5
+2021-05-03 10:20:32,573:INFO:Fitting Model
+2021-05-03 10:20:32,591:INFO:Evaluating Metrics
+2021-05-03 10:20:32,609:INFO:Compiling Metrics
+2021-05-03 10:20:32,638:INFO:Initializing Fold 6
+2021-05-03 10:20:32,646:INFO:Fitting Model
+2021-05-03 10:20:32,661:INFO:Evaluating Metrics
+2021-05-03 10:20:32,676:INFO:Compiling Metrics
+2021-05-03 10:20:32,700:INFO:Initializing Fold 7
+2021-05-03 10:20:32,713:INFO:Fitting Model
+2021-05-03 10:20:32,730:INFO:Evaluating Metrics
+2021-05-03 10:20:32,745:INFO:Compiling Metrics
+2021-05-03 10:20:32,775:INFO:Initializing Fold 8
+2021-05-03 10:20:32,784:INFO:Fitting Model
+2021-05-03 10:20:32,800:INFO:Evaluating Metrics
+2021-05-03 10:20:32,813:INFO:Compiling Metrics
+2021-05-03 10:20:32,842:INFO:Initializing Fold 9
+2021-05-03 10:20:32,850:INFO:Fitting Model
+2021-05-03 10:20:32,868:INFO:Evaluating Metrics
+2021-05-03 10:20:32,880:INFO:Compiling Metrics
+2021-05-03 10:20:32,909:INFO:Initializing Fold 10
+2021-05-03 10:20:32,916:INFO:Fitting Model
+2021-05-03 10:20:32,934:INFO:Evaluating Metrics
+2021-05-03 10:20:32,945:INFO:Compiling Metrics
+2021-05-03 10:20:32,974:INFO:Calculating mean and std
+2021-05-03 10:20:32,976:INFO:Creating metrics dataframe
+2021-05-03 10:20:32,990:INFO:Finalizing model
+2021-05-03 10:20:33,008:INFO:Uploading results into container
+2021-05-03 10:20:33,008:INFO:Uploading model into container now
+2021-05-03 10:20:33,082:INFO:create_model_container: 1
+2021-05-03 10:20:33,083:INFO:master_model_container: 1
+2021-05-03 10:20:33,083:INFO:display_container: 1
+2021-05-03 10:20:33,083:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=2883, splitter='best')
+2021-05-03 10:20:33,083:INFO:create_model() succesfully completed......................................
+2021-05-03 10:20:36,857:INFO:Initializing tune_model()
+2021-05-03 10:20:36,859:INFO:tune_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=2883, splitter='best'), fold=10, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, choose_better=False, verbose=True)
+2021-05-03 10:20:36,859:INFO:Checking exceptions
+2021-05-03 10:20:36,862:INFO:Preloading libraries
+2021-05-03 10:20:36,862:INFO:Preparing display monitor
+2021-05-03 10:20:36,887:INFO:Copying training dataset
+2021-05-03 10:20:36,889:INFO:Importing libraries
+2021-05-03 10:20:36,889:INFO:Checking base model
+2021-05-03 10:20:36,890:INFO:Base model : Decision Tree Classifier
+2021-05-03 10:20:36,891:INFO:Defining folds
+2021-05-03 10:20:36,891:INFO:Declaring metric variables
+2021-05-03 10:20:36,897:INFO:Defining Hyperparameters
+2021-05-03 10:20:36,897:INFO:Initializing RandomizedSearchCV
+2021-05-03 10:20:38,897:INFO:Random search completed
+2021-05-03 10:20:38,907:INFO:Initializing Fold 1
+2021-05-03 10:20:38,914:INFO:Fitting Model
+2021-05-03 10:20:38,924:INFO:Evaluating Metrics
+2021-05-03 10:20:38,937:INFO:Compiling Metrics
+2021-05-03 10:20:38,963:INFO:Initializing Fold 2
+2021-05-03 10:20:38,973:INFO:Fitting Model
+2021-05-03 10:20:38,985:INFO:Evaluating Metrics
+2021-05-03 10:20:39,001:INFO:Compiling Metrics
+2021-05-03 10:20:39,036:INFO:Initializing Fold 3
+2021-05-03 10:20:39,048:INFO:Fitting Model
+2021-05-03 10:20:39,061:INFO:Evaluating Metrics
+2021-05-03 10:20:39,077:INFO:Compiling Metrics
+2021-05-03 10:20:39,105:INFO:Initializing Fold 4
+2021-05-03 10:20:39,113:INFO:Fitting Model
+2021-05-03 10:20:39,127:INFO:Evaluating Metrics
+2021-05-03 10:20:39,144:INFO:Compiling Metrics
+2021-05-03 10:20:39,174:INFO:Initializing Fold 5
+2021-05-03 10:20:39,183:INFO:Fitting Model
+2021-05-03 10:20:39,200:INFO:Evaluating Metrics
+2021-05-03 10:20:39,213:INFO:Compiling Metrics
+2021-05-03 10:20:39,243:INFO:Initializing Fold 6
+2021-05-03 10:20:39,251:INFO:Fitting Model
+2021-05-03 10:20:39,266:INFO:Evaluating Metrics
+2021-05-03 10:20:39,279:INFO:Compiling Metrics
+2021-05-03 10:20:39,310:INFO:Initializing Fold 7
+2021-05-03 10:20:39,321:INFO:Fitting Model
+2021-05-03 10:20:39,334:INFO:Evaluating Metrics
+2021-05-03 10:20:39,348:INFO:Compiling Metrics
+2021-05-03 10:20:39,379:INFO:Initializing Fold 8
+2021-05-03 10:20:39,391:INFO:Fitting Model
+2021-05-03 10:20:39,405:INFO:Evaluating Metrics
+2021-05-03 10:20:39,418:INFO:Compiling Metrics
+2021-05-03 10:20:39,450:INFO:Initializing Fold 9
+2021-05-03 10:20:39,460:INFO:Fitting Model
+2021-05-03 10:20:39,474:INFO:Evaluating Metrics
+2021-05-03 10:20:39,488:INFO:Compiling Metrics
+2021-05-03 10:20:39,518:INFO:Initializing Fold 10
+2021-05-03 10:20:39,529:INFO:Fitting Model
+2021-05-03 10:20:39,542:INFO:Evaluating Metrics
+2021-05-03 10:20:39,556:INFO:Compiling Metrics
+2021-05-03 10:20:39,591:INFO:Calculating mean and std
+2021-05-03 10:20:39,592:INFO:Creating metrics dataframe
+2021-05-03 10:20:39,604:INFO:Finalizing model
+2021-05-03 10:20:39,617:INFO:Uploading results into container
+2021-05-03 10:20:39,617:INFO:Uploading model into container
+2021-05-03 10:20:39,705:INFO:create_model_container: 2
+2021-05-03 10:20:39,705:INFO:master_model_container: 2
+2021-05-03 10:20:39,705:INFO:display_container: 2
+2021-05-03 10:20:39,706:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=34, max_features=21, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=6, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=2883, splitter='best')
+2021-05-03 10:20:39,706:INFO:tune_model() succesfully completed......................................
+2021-05-03 10:21:05,054:INFO:Initializing plot_model()
+2021-05-03 10:21:05,056:INFO:plot_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=2883, splitter='best'), plot=feature, save=True, verbose=True, system=True)
+2021-05-03 10:21:05,056:INFO:Checking exceptions
+2021-05-03 10:21:05,060:INFO:Preloading libraries
+2021-05-03 10:21:05,060:INFO:Preparing display monitor
+2021-05-03 10:21:05,072:INFO:Importing libraries
+2021-05-03 10:21:05,073:INFO:plot type: feature
+2021-05-03 10:21:05,073:WARNING:No coef_ found. Trying feature_importances_
+2021-05-03 10:21:05,132:INFO:Saving 'Feature Importance.png' in current active directory
+2021-05-03 10:21:05,268:INFO:Visual Rendered Successfully
+2021-05-03 10:21:05,268:INFO:plot_model() succesfully completed......................................
+2021-05-03 10:24:22,288:INFO:PyCaret Classification Module
+2021-05-03 10:24:22,288:INFO:version 2.0
+2021-05-03 10:24:22,288:INFO:Initializing setup()
+2021-05-03 10:24:22,288:INFO:USI: 3833
+2021-05-03 10:24:22,289:INFO:setup(data=(4214, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Yellow_card', 'Red_card'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-03 10:24:22,289:INFO:Checking environment
+2021-05-03 10:24:22,289:INFO:python_version: 3.6.9
+2021-05-03 10:24:22,289:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-03 10:24:22,289:INFO:machine: x86_64
+2021-05-03 10:24:22,291:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-03 10:24:22,292:INFO:Memory: svmem(total=16493772800, available=4892975104, percent=70.3, used=9873276928, free=1110659072, active=6877802496, inactive=2926055424, buffers=753405952, cached=4756430848, shared=1375092736, slab=586702848)
+2021-05-03 10:24:22,293:INFO:Physical Core: 4
+2021-05-03 10:24:22,293:INFO:Logical Core: 8
+2021-05-03 10:24:22,293:INFO:Checking libraries
+2021-05-03 10:24:22,293:INFO:pd==1.0.5
+2021-05-03 10:24:22,293:INFO:numpy==1.18.5
+2021-05-03 10:24:22,293:INFO:sklearn==0.23.2
+2021-05-03 10:24:22,293:INFO:xgboost==1.1.1
+2021-05-03 10:24:22,300:INFO:lightgbm==2.3.1
+2021-05-03 10:24:22,313:INFO:catboost==0.24
+2021-05-03 10:24:22,919:INFO:mlflow==1.10.0
+2021-05-03 10:24:22,919:INFO:Checking Exceptions
+2021-05-03 10:24:22,919:INFO:Preloading libraries
+2021-05-03 10:24:22,919:INFO:Preparing display monitor
+2021-05-03 10:24:22,944:INFO:Importing libraries
+2021-05-03 10:24:23,000:INFO:Copying data for preprocessing
+2021-05-03 10:24:23,002:INFO:Declaring global variables
+2021-05-03 10:24:23,013:INFO:Declaring preprocessing parameters
+2021-05-03 10:24:23,013:INFO:Importing preprocessing module
+2021-05-03 10:24:23,448:INFO:Creating preprocessing pipeline
+2021-05-03 10:24:28,535:INFO:Preprocessing pipeline created successfully
+2021-05-03 10:24:28,535:INFO:Creating grid variables
+2021-05-03 10:24:28,538:INFO:Creating global containers
+2021-05-03 10:24:28,641:INFO:create_model_container 0
+2021-05-03 10:24:28,641:INFO:master_model_container 0
+2021-05-03 10:24:28,641:INFO:display_container 0
+2021-05-03 10:24:28,649:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-03 10:24:28,649:INFO:setup() succesfully completed......................................
+2021-05-03 10:25:47,674:INFO:Initializing create_model()
+2021-05-03 10:25:47,674:INFO:create_model(estimator=lr, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-03 10:25:47,674:INFO:Checking exceptions
+2021-05-03 10:25:47,675:INFO:Preloading libraries
+2021-05-03 10:25:47,675:INFO:Preparing display monitor
+2021-05-03 10:25:47,720:INFO:Copying training dataset
+2021-05-03 10:25:47,721:INFO:Importing libraries
+2021-05-03 10:25:47,722:INFO:Defining folds
+2021-05-03 10:25:47,722:INFO:Declaring metric variables
+2021-05-03 10:25:47,728:INFO:Importing untrained model
+2021-05-03 10:25:47,728:INFO:Logistic Regression Imported succesfully
+2021-05-03 10:25:47,729:INFO:Checking ensemble method
+2021-05-03 10:25:47,741:INFO:Initializing Fold 1
+2021-05-03 10:25:47,751:INFO:Fitting Model
+2021-05-03 10:25:47,873:INFO:Evaluating Metrics
+2021-05-03 10:25:47,890:INFO:Compiling Metrics
+2021-05-03 10:25:47,919:INFO:Initializing Fold 2
+2021-05-03 10:25:47,928:INFO:Fitting Model
+2021-05-03 10:25:48,081:INFO:Evaluating Metrics
+2021-05-03 10:25:48,095:INFO:Compiling Metrics
+2021-05-03 10:25:48,122:INFO:Initializing Fold 3
+2021-05-03 10:25:48,129:INFO:Fitting Model
+2021-05-03 10:25:48,262:INFO:Evaluating Metrics
+2021-05-03 10:25:48,276:INFO:Compiling Metrics
+2021-05-03 10:25:48,308:INFO:Initializing Fold 4
+2021-05-03 10:25:48,317:INFO:Fitting Model
+2021-05-03 10:25:48,439:INFO:Evaluating Metrics
+2021-05-03 10:25:48,455:INFO:Compiling Metrics
+2021-05-03 10:25:48,495:INFO:Initializing Fold 5
+2021-05-03 10:25:48,508:INFO:Fitting Model
+2021-05-03 10:25:48,634:INFO:Evaluating Metrics
+2021-05-03 10:25:48,649:INFO:Compiling Metrics
+2021-05-03 10:25:48,709:INFO:Initializing Fold 6
+2021-05-03 10:25:48,738:INFO:Fitting Model
+2021-05-03 10:25:48,857:INFO:Evaluating Metrics
+2021-05-03 10:25:48,871:INFO:Compiling Metrics
+2021-05-03 10:25:48,932:INFO:Initializing Fold 7
+2021-05-03 10:25:48,954:INFO:Fitting Model
+2021-05-03 10:25:49,063:INFO:Evaluating Metrics
+2021-05-03 10:25:49,080:INFO:Compiling Metrics
+2021-05-03 10:25:49,170:INFO:Initializing Fold 8
+2021-05-03 10:25:49,185:INFO:Fitting Model
+2021-05-03 10:25:49,350:INFO:Evaluating Metrics
+2021-05-03 10:25:49,365:INFO:Compiling Metrics
+2021-05-03 10:25:49,396:INFO:Initializing Fold 9
+2021-05-03 10:25:49,405:INFO:Fitting Model
+2021-05-03 10:25:49,562:INFO:Evaluating Metrics
+2021-05-03 10:25:49,594:INFO:Compiling Metrics
+2021-05-03 10:25:49,660:INFO:Initializing Fold 10
+2021-05-03 10:25:49,674:INFO:Fitting Model
+2021-05-03 10:25:49,816:INFO:Evaluating Metrics
+2021-05-03 10:25:49,831:INFO:Compiling Metrics
+2021-05-03 10:25:49,867:INFO:Calculating mean and std
+2021-05-03 10:25:49,870:INFO:Creating metrics dataframe
+2021-05-03 10:25:49,902:INFO:Finalizing model
+2021-05-03 10:25:50,064:INFO:Uploading results into container
+2021-05-03 10:25:50,065:INFO:Uploading model into container now
+2021-05-03 10:25:50,204:INFO:create_model_container: 1
+2021-05-03 10:25:50,204:INFO:master_model_container: 1
+2021-05-03 10:25:50,204:INFO:display_container: 1
+2021-05-03 10:25:50,205:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=1813, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2021-05-03 10:25:50,205:INFO:create_model() succesfully completed......................................
+2021-05-03 10:48:13,879:INFO:PyCaret Classification Module
+2021-05-03 10:48:13,880:INFO:version 2.0
+2021-05-03 10:48:13,880:INFO:Initializing setup()
+2021-05-03 10:48:13,880:INFO:USI: 3d32
+2021-05-03 10:48:13,880:INFO:setup(data=(4214, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Yellow_card', 'Red_card'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-03 10:48:13,880:INFO:Checking environment
+2021-05-03 10:48:13,880:INFO:python_version: 3.6.9
+2021-05-03 10:48:13,880:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-03 10:48:13,880:INFO:machine: x86_64
+2021-05-03 10:48:13,882:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-03 10:48:13,882:INFO:Memory: svmem(total=16493772800, available=3972374528, percent=75.9, used=10452414464, free=434470912, active=7973945344, inactive=2342985728, buffers=696795136, cached=4910092288, shared=1716498432, slab=589983744)
+2021-05-03 10:48:13,883:INFO:Physical Core: 4
+2021-05-03 10:48:13,883:INFO:Logical Core: 8
+2021-05-03 10:48:13,883:INFO:Checking libraries
+2021-05-03 10:48:13,883:INFO:pd==1.0.5
+2021-05-03 10:48:13,883:INFO:numpy==1.18.5
+2021-05-03 10:48:13,883:INFO:sklearn==0.23.2
+2021-05-03 10:48:14,231:INFO:xgboost==1.1.1
+2021-05-03 10:48:14,238:INFO:lightgbm==2.3.1
+2021-05-03 10:48:14,249:INFO:catboost==0.24
+2021-05-03 10:48:14,715:INFO:mlflow==1.10.0
+2021-05-03 10:48:14,716:INFO:Checking Exceptions
+2021-05-03 10:48:14,716:INFO:Preloading libraries
+2021-05-03 10:48:14,716:INFO:Preparing display monitor
+2021-05-03 10:48:14,733:INFO:Importing libraries
+2021-05-03 10:48:15,158:INFO:Copying data for preprocessing
+2021-05-03 10:48:15,159:INFO:Declaring global variables
+2021-05-03 10:48:15,174:INFO:Declaring preprocessing parameters
+2021-05-03 10:48:15,174:INFO:Importing preprocessing module
+2021-05-03 10:48:15,616:INFO:Creating preprocessing pipeline
+2021-05-03 10:48:17,033:INFO:Preprocessing pipeline created successfully
+2021-05-03 10:48:17,033:INFO:Creating grid variables
+2021-05-03 10:48:17,035:INFO:Creating global containers
+2021-05-03 10:48:17,133:INFO:create_model_container 0
+2021-05-03 10:48:17,134:INFO:master_model_container 0
+2021-05-03 10:48:17,134:INFO:display_container 0
+2021-05-03 10:48:17,141:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-03 10:48:17,142:INFO:setup() succesfully completed......................................
+2021-05-03 10:48:32,224:INFO:Initializing create_model()
+2021-05-03 10:48:32,224:INFO:create_model(estimator=mlp, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-03 10:48:32,225:INFO:Checking exceptions
+2021-05-03 10:48:32,225:INFO:Preloading libraries
+2021-05-03 10:48:32,225:INFO:Preparing display monitor
+2021-05-03 10:48:32,264:INFO:Copying training dataset
+2021-05-03 10:48:32,267:INFO:Importing libraries
+2021-05-03 10:48:32,268:INFO:Defining folds
+2021-05-03 10:48:32,269:INFO:Declaring metric variables
+2021-05-03 10:48:32,276:INFO:Importing untrained model
+2021-05-03 10:48:32,281:INFO:MLP Classifier Imported succesfully
+2021-05-03 10:48:32,282:INFO:Checking ensemble method
+2021-05-03 10:48:32,296:INFO:Initializing Fold 1
+2021-05-03 10:48:32,310:INFO:Fitting Model
+2021-05-03 10:48:47,768:INFO:Evaluating Metrics
+2021-05-03 10:48:47,808:INFO:Compiling Metrics
+2021-05-03 10:48:47,866:INFO:Initializing Fold 2
+2021-05-03 10:48:47,892:INFO:Fitting Model
+2021-05-03 10:49:16,513:INFO:Evaluating Metrics
+2021-05-03 10:49:16,537:INFO:Compiling Metrics
+2021-05-03 10:49:16,577:INFO:Initializing Fold 3
+2021-05-03 10:49:16,591:INFO:Fitting Model
+2021-05-03 10:49:35,229:INFO:Evaluating Metrics
+2021-05-03 10:49:35,260:INFO:Compiling Metrics
+2021-05-03 10:49:35,313:INFO:Initializing Fold 4
+2021-05-03 10:49:35,331:INFO:Fitting Model
+2021-05-03 10:49:55,307:INFO:Evaluating Metrics
+2021-05-03 10:49:55,347:INFO:Compiling Metrics
+2021-05-03 10:49:55,404:INFO:Initializing Fold 5
+2021-05-03 10:49:55,422:INFO:Fitting Model
+2021-05-03 10:50:12,542:INFO:Evaluating Metrics
+2021-05-03 10:50:12,565:INFO:Compiling Metrics
+2021-05-03 10:50:12,628:INFO:Initializing Fold 6
+2021-05-03 10:50:12,649:INFO:Fitting Model
+2021-05-03 10:50:29,303:INFO:Evaluating Metrics
+2021-05-03 10:50:29,329:INFO:Compiling Metrics
+2021-05-03 10:50:29,420:INFO:Initializing Fold 7
+2021-05-03 10:50:29,452:INFO:Fitting Model
+2021-05-03 10:50:49,795:INFO:Evaluating Metrics
+2021-05-03 10:50:49,819:INFO:Compiling Metrics
+2021-05-03 10:50:49,888:INFO:Initializing Fold 8
+2021-05-03 10:50:49,910:INFO:Fitting Model
+2021-05-03 10:51:08,422:INFO:Evaluating Metrics
+2021-05-03 10:51:08,435:INFO:Compiling Metrics
+2021-05-03 10:51:08,471:INFO:Initializing Fold 9
+2021-05-03 10:51:08,486:INFO:Fitting Model
+2021-05-03 10:51:23,936:INFO:Evaluating Metrics
+2021-05-03 10:51:23,960:INFO:Compiling Metrics
+2021-05-03 10:51:24,012:INFO:Initializing Fold 10
+2021-05-03 10:51:24,028:INFO:Fitting Model
+2021-05-03 10:51:51,202:INFO:Evaluating Metrics
+2021-05-03 10:51:51,232:INFO:Compiling Metrics
+2021-05-03 10:51:51,295:INFO:Calculating mean and std
+2021-05-03 10:51:51,298:INFO:Creating metrics dataframe
+2021-05-03 10:51:51,348:INFO:Finalizing model
+2021-05-03 10:52:12,841:INFO:Uploading results into container
+2021-05-03 10:52:12,841:INFO:Uploading model into container now
+2021-05-03 10:52:13,020:INFO:create_model_container: 1
+2021-05-03 10:52:13,020:INFO:master_model_container: 1
+2021-05-03 10:52:13,020:INFO:display_container: 1
+2021-05-03 10:52:13,021:INFO:MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+              beta_2=0.999, early_stopping=False, epsilon=1e-08,
+              hidden_layer_sizes=(100,), learning_rate='constant',
+              learning_rate_init=0.001, max_fun=15000, max_iter=500,
+              momentum=0.9, n_iter_no_change=10, nesterovs_momentum=True,
+              power_t=0.5, random_state=1723, shuffle=True, solver='adam',
+              tol=0.0001, validation_fraction=0.1, verbose=False,
+              warm_start=False)
+2021-05-03 10:52:13,021:INFO:create_model() succesfully completed......................................
+2021-05-03 10:53:01,703:INFO:Initializing tune_model()
+2021-05-03 10:53:01,705:INFO:tune_model(estimator=MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+              beta_2=0.999, early_stopping=False, epsilon=1e-08,
+              hidden_layer_sizes=(100,), learning_rate='constant',
+              learning_rate_init=0.001, max_fun=15000, max_iter=500,
+              momentum=0.9, n_iter_no_change=10, nesterovs_momentum=True,
+              power_t=0.5, random_state=1723, shuffle=True, solver='adam',
+              tol=0.0001, validation_fraction=0.1, verbose=False,
+              warm_start=False), fold=10, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, choose_better=False, verbose=True)
+2021-05-03 10:53:01,705:INFO:Checking exceptions
+2021-05-03 10:53:01,708:INFO:Preloading libraries
+2021-05-03 10:53:01,708:INFO:Preparing display monitor
+2021-05-03 10:53:01,736:INFO:Copying training dataset
+2021-05-03 10:53:01,738:INFO:Importing libraries
+2021-05-03 10:53:01,738:INFO:Checking base model
+2021-05-03 10:53:01,739:INFO:Base model : MLP Classifier
+2021-05-03 10:53:01,740:INFO:Defining folds
+2021-05-03 10:53:01,740:INFO:Declaring metric variables
+2021-05-03 10:53:01,747:INFO:Defining Hyperparameters
+2021-05-03 10:53:01,747:INFO:Initializing RandomizedSearchCV
+2021-05-03 10:54:59,187:INFO:Random search completed
+2021-05-03 10:54:59,216:INFO:Initializing Fold 1
+2021-05-03 10:54:59,229:INFO:Fitting Model
+2021-05-03 10:55:16,313:INFO:Evaluating Metrics
+2021-05-03 10:55:16,340:INFO:Compiling Metrics
+2021-05-03 10:55:16,385:INFO:Initializing Fold 2
+2021-05-03 10:55:16,399:INFO:Fitting Model
+2021-05-03 10:55:31,231:INFO:Evaluating Metrics
+2021-05-03 10:55:31,265:INFO:Compiling Metrics
+2021-05-03 10:55:31,326:INFO:Initializing Fold 3
+2021-05-03 10:55:31,347:INFO:Fitting Model
+2021-05-03 10:55:46,900:INFO:Evaluating Metrics
+2021-05-03 10:55:46,923:INFO:Compiling Metrics
+2021-05-03 10:55:46,982:INFO:Initializing Fold 4
+2021-05-03 10:55:47,001:INFO:Fitting Model
+2021-05-03 10:56:01,744:INFO:Evaluating Metrics
+2021-05-03 10:56:01,781:INFO:Compiling Metrics
+2021-05-03 10:56:01,852:INFO:Initializing Fold 5
+2021-05-03 10:56:01,882:INFO:Fitting Model
+2021-05-03 10:56:20,540:INFO:Evaluating Metrics
+2021-05-03 10:56:20,563:INFO:Compiling Metrics
+2021-05-03 10:56:20,613:INFO:Initializing Fold 6
+2021-05-03 10:56:20,633:INFO:Fitting Model
+2021-05-03 10:56:37,778:INFO:Evaluating Metrics
+2021-05-03 10:56:37,802:INFO:Compiling Metrics
+2021-05-03 10:56:37,853:INFO:Initializing Fold 7
+2021-05-03 10:56:37,870:INFO:Fitting Model
+2021-05-03 10:56:54,050:INFO:Evaluating Metrics
+2021-05-03 10:56:54,083:INFO:Compiling Metrics
+2021-05-03 10:56:54,143:INFO:Initializing Fold 8
+2021-05-03 10:56:54,158:INFO:Fitting Model
+2021-05-03 10:57:14,560:INFO:Evaluating Metrics
+2021-05-03 10:57:14,587:INFO:Compiling Metrics
+2021-05-03 10:57:14,665:INFO:Initializing Fold 9
+2021-05-03 10:57:14,691:INFO:Fitting Model
+2021-05-03 10:57:29,920:INFO:Evaluating Metrics
+2021-05-03 10:57:29,947:INFO:Compiling Metrics
+2021-05-03 10:57:30,038:INFO:Initializing Fold 10
+2021-05-03 10:57:30,057:INFO:Fitting Model
+2021-05-03 10:57:44,043:INFO:Evaluating Metrics
+2021-05-03 10:57:44,067:INFO:Compiling Metrics
+2021-05-03 10:57:44,151:INFO:Calculating mean and std
+2021-05-03 10:57:44,152:INFO:Creating metrics dataframe
+2021-05-03 10:57:44,199:INFO:Finalizing model
+2021-05-03 10:57:59,688:INFO:Uploading results into container
+2021-05-03 10:57:59,688:INFO:Uploading model into container
+2021-05-03 10:57:59,809:INFO:create_model_container: 2
+2021-05-03 10:57:59,809:INFO:master_model_container: 2
+2021-05-03 10:57:59,810:INFO:display_container: 2
+2021-05-03 10:57:59,811:INFO:MLPClassifier(activation='identity', alpha=0.8474, batch_size='auto',
+              beta_1=0.9, beta_2=0.999, early_stopping=False, epsilon=1e-08,
+              hidden_layer_sizes=(50, 50, 50), learning_rate='adaptive',
+              learning_rate_init=0.001, max_fun=15000, max_iter=1000,
+              momentum=0.9, n_iter_no_change=10, nesterovs_momentum=True,
+              power_t=0.5, random_state=1723, shuffle=True, solver='lbfgs',
+              tol=0.0001, validation_fraction=0.1, verbose=False,
+              warm_start=False)
+2021-05-03 10:57:59,811:INFO:tune_model() succesfully completed......................................
+2021-05-12 10:20:45,389:INFO:PyCaret Classification Module
+2021-05-12 10:20:45,390:INFO:version 2.0
+2021-05-12 10:20:45,391:INFO:Initializing setup()
+2021-05-12 10:20:45,391:INFO:USI: eeed
+2021-05-12 10:20:45,391:INFO:setup(data=(4214, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Yellow_card', 'Red_card'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-12 10:20:45,391:INFO:Checking environment
+2021-05-12 10:20:45,391:INFO:python_version: 3.6.9
+2021-05-12 10:20:45,391:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-12 10:20:45,392:INFO:machine: x86_64
+2021-05-12 10:20:45,393:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-12 10:20:45,393:INFO:Memory: svmem(total=16493772800, available=9087303680, percent=44.9, used=6017331200, free=2792697856, active=9757663232, inactive=2278543360, buffers=1775685632, cached=5908058112, shared=1037164544, slab=1058570240)
+2021-05-12 10:20:45,394:INFO:Physical Core: 4
+2021-05-12 10:20:45,394:INFO:Logical Core: 8
+2021-05-12 10:20:45,394:INFO:Checking libraries
+2021-05-12 10:20:45,394:INFO:pd==1.0.5
+2021-05-12 10:20:45,394:INFO:numpy==1.18.5
+2021-05-12 10:20:45,394:INFO:sklearn==0.23.2
+2021-05-12 10:20:45,394:INFO:xgboost==1.1.1
+2021-05-12 10:20:45,394:INFO:lightgbm==2.3.1
+2021-05-12 10:20:45,457:INFO:catboost==0.24
+2021-05-12 10:20:46,002:INFO:mlflow==1.10.0
+2021-05-12 10:20:46,003:INFO:Checking Exceptions
+2021-05-12 10:20:46,003:INFO:Preloading libraries
+2021-05-12 10:20:46,003:INFO:Preparing display monitor
+2021-05-12 10:20:46,019:INFO:Importing libraries
+2021-05-12 10:20:46,796:INFO:Copying data for preprocessing
+2021-05-12 10:20:46,797:INFO:Declaring global variables
+2021-05-12 10:20:46,807:INFO:Declaring preprocessing parameters
+2021-05-12 10:20:46,807:INFO:Importing preprocessing module
+2021-05-12 10:20:46,807:INFO:Creating preprocessing pipeline
+2021-05-12 10:20:48,465:INFO:Preprocessing pipeline created successfully
+2021-05-12 10:20:48,465:INFO:Creating grid variables
+2021-05-12 10:20:48,467:INFO:Creating global containers
+2021-05-12 10:20:48,576:INFO:create_model_container 0
+2021-05-12 10:20:48,576:INFO:master_model_container 0
+2021-05-12 10:20:48,576:INFO:display_container 0
+2021-05-12 10:20:48,583:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-12 10:20:48,583:INFO:setup() succesfully completed......................................
+2021-05-12 10:21:21,193:INFO:Initializing plot_model()
+2021-05-12 10:21:21,200:INFO:plot_model(estimator=[Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False), DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=7940, splitter='best')], plot=boundary, save=False, verbose=True, system=True)
+2021-05-12 10:21:21,200:INFO:Checking exceptions
+2021-05-12 10:21:21,204:INFO:Preloading libraries
+2021-05-12 10:21:21,204:INFO:Preparing display monitor
+2021-05-12 10:21:21,210:INFO:Importing libraries
+2021-05-12 10:21:21,211:INFO:plot type: boundary
+2021-05-12 10:21:21,287:INFO:Fitting StandardScaler()
+2021-05-12 10:21:21,299:INFO:Fitting PCA()
+2021-05-12 10:39:29,654:INFO:PyCaret Classification Module
+2021-05-12 10:39:29,654:INFO:version 2.0
+2021-05-12 10:39:29,654:INFO:Initializing setup()
+2021-05-12 10:39:29,655:INFO:USI: 7b20
+2021-05-12 10:39:29,655:INFO:setup(data=(4211, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Fouls_conceded', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Own_goals'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-12 10:39:29,655:INFO:Checking environment
+2021-05-12 10:39:29,655:INFO:python_version: 3.6.9
+2021-05-12 10:39:29,655:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-12 10:39:29,655:INFO:machine: x86_64
+2021-05-12 10:39:29,655:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-12 10:39:29,656:INFO:Memory: svmem(total=16493772800, available=8979075072, percent=45.6, used=6189080576, free=3670392832, active=9214509056, inactive=2118320128, buffers=1555156992, cached=5079142400, shared=973615104, slab=1184165888)
+2021-05-12 10:39:29,656:INFO:Physical Core: 4
+2021-05-12 10:39:29,656:INFO:Logical Core: 8
+2021-05-12 10:39:29,656:INFO:Checking libraries
+2021-05-12 10:39:29,656:INFO:pd==1.0.5
+2021-05-12 10:39:29,656:INFO:numpy==1.18.5
+2021-05-12 10:39:29,656:INFO:sklearn==0.23.2
+2021-05-12 10:39:29,656:INFO:xgboost==1.1.1
+2021-05-12 10:39:29,662:INFO:lightgbm==2.3.1
+2021-05-12 10:39:29,675:INFO:catboost==0.24
+2021-05-12 10:39:30,295:INFO:mlflow==1.10.0
+2021-05-12 10:39:30,295:INFO:Checking Exceptions
+2021-05-12 10:39:30,296:INFO:Preloading libraries
+2021-05-12 10:39:30,296:INFO:Preparing display monitor
+2021-05-12 10:39:30,312:INFO:Importing libraries
+2021-05-12 10:39:30,900:INFO:Copying data for preprocessing
+2021-05-12 10:39:30,901:INFO:Declaring global variables
+2021-05-12 10:39:30,910:INFO:Declaring preprocessing parameters
+2021-05-12 10:39:30,911:INFO:Importing preprocessing module
+2021-05-12 10:39:31,503:INFO:Creating preprocessing pipeline
+2021-05-12 10:39:32,808:INFO:Preprocessing pipeline created successfully
+2021-05-12 10:39:32,808:INFO:Creating grid variables
+2021-05-12 10:39:32,810:INFO:Creating global containers
+2021-05-12 10:39:32,896:INFO:create_model_container 0
+2021-05-12 10:39:32,897:INFO:master_model_container 0
+2021-05-12 10:39:32,897:INFO:display_container 0
+2021-05-12 10:39:32,906:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-12 10:39:32,906:INFO:setup() succesfully completed......................................
+2021-05-12 10:39:41,705:INFO:Initializing create_model()
+2021-05-12 10:39:41,705:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:39:41,705:INFO:Checking exceptions
+2021-05-12 10:39:41,705:INFO:Preloading libraries
+2021-05-12 10:39:41,705:INFO:Preparing display monitor
+2021-05-12 10:39:41,742:INFO:Copying training dataset
+2021-05-12 10:39:41,743:INFO:Importing libraries
+2021-05-12 10:39:41,744:INFO:Defining folds
+2021-05-12 10:39:41,744:INFO:Declaring metric variables
+2021-05-12 10:39:41,751:INFO:Importing untrained model
+2021-05-12 10:39:41,752:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:39:41,753:INFO:Checking ensemble method
+2021-05-12 10:39:41,763:INFO:Initializing Fold 1
+2021-05-12 10:39:41,772:INFO:Fitting Model
+2021-05-12 10:39:41,788:INFO:Evaluating Metrics
+2021-05-12 10:39:41,801:INFO:Compiling Metrics
+2021-05-12 10:39:41,821:INFO:Initializing Fold 2
+2021-05-12 10:39:41,828:INFO:Fitting Model
+2021-05-12 10:39:41,843:INFO:Evaluating Metrics
+2021-05-12 10:39:41,858:INFO:Compiling Metrics
+2021-05-12 10:39:41,879:INFO:Initializing Fold 3
+2021-05-12 10:39:41,885:INFO:Fitting Model
+2021-05-12 10:39:41,896:INFO:Evaluating Metrics
+2021-05-12 10:39:41,907:INFO:Compiling Metrics
+2021-05-12 10:39:41,927:INFO:Initializing Fold 4
+2021-05-12 10:39:41,934:INFO:Fitting Model
+2021-05-12 10:39:41,947:INFO:Evaluating Metrics
+2021-05-12 10:39:41,956:INFO:Compiling Metrics
+2021-05-12 10:39:41,983:INFO:Initializing Fold 5
+2021-05-12 10:39:41,991:INFO:Fitting Model
+2021-05-12 10:39:42,004:INFO:Evaluating Metrics
+2021-05-12 10:39:42,016:INFO:Compiling Metrics
+2021-05-12 10:39:42,037:INFO:Initializing Fold 6
+2021-05-12 10:39:42,044:INFO:Fitting Model
+2021-05-12 10:39:42,057:INFO:Evaluating Metrics
+2021-05-12 10:39:42,068:INFO:Compiling Metrics
+2021-05-12 10:39:42,088:INFO:Initializing Fold 7
+2021-05-12 10:39:42,095:INFO:Fitting Model
+2021-05-12 10:39:42,107:INFO:Evaluating Metrics
+2021-05-12 10:39:42,117:INFO:Compiling Metrics
+2021-05-12 10:39:42,137:INFO:Initializing Fold 8
+2021-05-12 10:39:42,145:INFO:Fitting Model
+2021-05-12 10:39:42,157:INFO:Evaluating Metrics
+2021-05-12 10:39:42,168:INFO:Compiling Metrics
+2021-05-12 10:39:42,190:INFO:Initializing Fold 9
+2021-05-12 10:39:42,199:INFO:Fitting Model
+2021-05-12 10:39:42,212:INFO:Evaluating Metrics
+2021-05-12 10:39:42,223:INFO:Compiling Metrics
+2021-05-12 10:39:42,245:INFO:Initializing Fold 10
+2021-05-12 10:39:42,252:INFO:Fitting Model
+2021-05-12 10:39:42,264:INFO:Evaluating Metrics
+2021-05-12 10:39:42,274:INFO:Compiling Metrics
+2021-05-12 10:39:42,307:INFO:Calculating mean and std
+2021-05-12 10:39:42,309:INFO:Creating metrics dataframe
+2021-05-12 10:39:42,323:INFO:Finalizing model
+2021-05-12 10:39:42,341:INFO:Uploading results into container
+2021-05-12 10:39:42,342:INFO:Uploading model into container now
+2021-05-12 10:39:42,395:INFO:create_model_container: 1
+2021-05-12 10:39:42,395:INFO:master_model_container: 1
+2021-05-12 10:39:42,395:INFO:display_container: 1
+2021-05-12 10:39:42,396:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:39:42,396:INFO:create_model() succesfully completed......................................
+2021-05-12 10:39:55,123:INFO:Initializing plot_model()
+2021-05-12 10:39:55,123:INFO:plot_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best'), plot=feature, save=True, verbose=True, system=True)
+2021-05-12 10:39:55,124:INFO:Checking exceptions
+2021-05-12 10:39:55,126:INFO:Preloading libraries
+2021-05-12 10:39:55,126:INFO:Preparing display monitor
+2021-05-12 10:39:55,133:INFO:Importing libraries
+2021-05-12 10:39:55,135:INFO:plot type: feature
+2021-05-12 10:39:55,135:WARNING:No coef_ found. Trying feature_importances_
+2021-05-12 10:39:55,188:INFO:Saving 'Feature Importance.png' in current active directory
+2021-05-12 10:39:55,307:INFO:Visual Rendered Successfully
+2021-05-12 10:39:55,308:INFO:plot_model() succesfully completed......................................
+2021-05-12 10:43:09,413:INFO:Initializing tune_model()
+2021-05-12 10:43:09,414:INFO:tune_model(estimator=DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best'), fold=10, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, choose_better=False, verbose=True)
+2021-05-12 10:43:09,414:INFO:Checking exceptions
+2021-05-12 10:43:09,416:INFO:Preloading libraries
+2021-05-12 10:43:09,416:INFO:Preparing display monitor
+2021-05-12 10:43:09,436:INFO:Copying training dataset
+2021-05-12 10:43:09,438:INFO:Importing libraries
+2021-05-12 10:43:09,439:INFO:Checking base model
+2021-05-12 10:43:09,439:INFO:Base model : Decision Tree Classifier
+2021-05-12 10:43:09,440:INFO:Defining folds
+2021-05-12 10:43:09,440:INFO:Declaring metric variables
+2021-05-12 10:43:09,445:INFO:Defining Hyperparameters
+2021-05-12 10:43:09,445:INFO:Initializing RandomizedSearchCV
+2021-05-12 10:43:11,504:INFO:Random search completed
+2021-05-12 10:43:11,512:INFO:Initializing Fold 1
+2021-05-12 10:43:11,519:INFO:Fitting Model
+2021-05-12 10:43:11,531:INFO:Evaluating Metrics
+2021-05-12 10:43:11,542:INFO:Compiling Metrics
+2021-05-12 10:43:11,564:INFO:Initializing Fold 2
+2021-05-12 10:43:11,571:INFO:Fitting Model
+2021-05-12 10:43:11,582:INFO:Evaluating Metrics
+2021-05-12 10:43:11,592:INFO:Compiling Metrics
+2021-05-12 10:43:11,613:INFO:Initializing Fold 3
+2021-05-12 10:43:11,619:INFO:Fitting Model
+2021-05-12 10:43:11,632:INFO:Evaluating Metrics
+2021-05-12 10:43:11,646:INFO:Compiling Metrics
+2021-05-12 10:43:11,666:INFO:Initializing Fold 4
+2021-05-12 10:43:11,673:INFO:Fitting Model
+2021-05-12 10:43:11,686:INFO:Evaluating Metrics
+2021-05-12 10:43:11,696:INFO:Compiling Metrics
+2021-05-12 10:43:11,719:INFO:Initializing Fold 5
+2021-05-12 10:43:11,728:INFO:Fitting Model
+2021-05-12 10:43:11,741:INFO:Evaluating Metrics
+2021-05-12 10:43:11,751:INFO:Compiling Metrics
+2021-05-12 10:43:11,777:INFO:Initializing Fold 6
+2021-05-12 10:43:11,783:INFO:Fitting Model
+2021-05-12 10:43:11,796:INFO:Evaluating Metrics
+2021-05-12 10:43:11,811:INFO:Compiling Metrics
+2021-05-12 10:43:11,834:INFO:Initializing Fold 7
+2021-05-12 10:43:11,839:INFO:Fitting Model
+2021-05-12 10:43:11,855:INFO:Evaluating Metrics
+2021-05-12 10:43:11,866:INFO:Compiling Metrics
+2021-05-12 10:43:11,888:INFO:Initializing Fold 8
+2021-05-12 10:43:11,895:INFO:Fitting Model
+2021-05-12 10:43:11,911:INFO:Evaluating Metrics
+2021-05-12 10:43:11,926:INFO:Compiling Metrics
+2021-05-12 10:43:11,946:INFO:Initializing Fold 9
+2021-05-12 10:43:11,952:INFO:Fitting Model
+2021-05-12 10:43:11,964:INFO:Evaluating Metrics
+2021-05-12 10:43:11,976:INFO:Compiling Metrics
+2021-05-12 10:43:11,998:INFO:Initializing Fold 10
+2021-05-12 10:43:12,007:INFO:Fitting Model
+2021-05-12 10:43:12,023:INFO:Evaluating Metrics
+2021-05-12 10:43:12,032:INFO:Compiling Metrics
+2021-05-12 10:43:12,061:INFO:Calculating mean and std
+2021-05-12 10:43:12,062:INFO:Creating metrics dataframe
+2021-05-12 10:43:12,072:INFO:Finalizing model
+2021-05-12 10:43:12,085:INFO:Uploading results into container
+2021-05-12 10:43:12,085:INFO:Uploading model into container
+2021-05-12 10:43:12,129:INFO:create_model_container: 2
+2021-05-12 10:43:12,129:INFO:master_model_container: 2
+2021-05-12 10:43:12,130:INFO:display_container: 2
+2021-05-12 10:43:12,130:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=35, max_features=29, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=3, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:43:12,131:INFO:tune_model() succesfully completed......................................
+2021-05-12 10:45:20,276:INFO:Initializing create_model()
+2021-05-12 10:45:20,276:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:45:20,276:INFO:Checking exceptions
+2021-05-12 10:45:20,276:INFO:Preloading libraries
+2021-05-12 10:45:20,276:INFO:Preparing display monitor
+2021-05-12 10:45:20,303:INFO:Copying training dataset
+2021-05-12 10:45:20,304:INFO:Importing libraries
+2021-05-12 10:45:20,305:INFO:Defining folds
+2021-05-12 10:45:20,305:INFO:Declaring metric variables
+2021-05-12 10:45:20,309:INFO:Importing untrained model
+2021-05-12 10:45:20,309:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:45:20,310:INFO:Checking ensemble method
+2021-05-12 10:45:20,316:INFO:Initializing Fold 1
+2021-05-12 10:45:20,321:INFO:Fitting Model
+2021-05-12 10:45:20,331:INFO:Evaluating Metrics
+2021-05-12 10:45:20,340:INFO:Compiling Metrics
+2021-05-12 10:45:20,365:INFO:Initializing Fold 2
+2021-05-12 10:45:20,374:INFO:Fitting Model
+2021-05-12 10:45:20,391:INFO:Evaluating Metrics
+2021-05-12 10:45:20,402:INFO:Compiling Metrics
+2021-05-12 10:45:20,421:INFO:Initializing Fold 3
+2021-05-12 10:45:20,431:INFO:Fitting Model
+2021-05-12 10:45:20,445:INFO:Evaluating Metrics
+2021-05-12 10:45:20,457:INFO:Compiling Metrics
+2021-05-12 10:45:20,477:INFO:Initializing Fold 4
+2021-05-12 10:45:20,485:INFO:Fitting Model
+2021-05-12 10:45:20,500:INFO:Evaluating Metrics
+2021-05-12 10:45:20,513:INFO:Compiling Metrics
+2021-05-12 10:45:20,533:INFO:Initializing Fold 5
+2021-05-12 10:45:20,541:INFO:Fitting Model
+2021-05-12 10:45:20,553:INFO:Evaluating Metrics
+2021-05-12 10:45:20,561:INFO:Compiling Metrics
+2021-05-12 10:45:20,578:INFO:Initializing Fold 6
+2021-05-12 10:45:20,585:INFO:Fitting Model
+2021-05-12 10:45:20,596:INFO:Evaluating Metrics
+2021-05-12 10:45:20,608:INFO:Compiling Metrics
+2021-05-12 10:45:20,638:INFO:Initializing Fold 7
+2021-05-12 10:45:20,647:INFO:Fitting Model
+2021-05-12 10:45:20,661:INFO:Evaluating Metrics
+2021-05-12 10:45:20,678:INFO:Compiling Metrics
+2021-05-12 10:45:20,700:INFO:Initializing Fold 8
+2021-05-12 10:45:20,709:INFO:Fitting Model
+2021-05-12 10:45:20,720:INFO:Evaluating Metrics
+2021-05-12 10:45:20,729:INFO:Compiling Metrics
+2021-05-12 10:45:20,751:INFO:Initializing Fold 9
+2021-05-12 10:45:20,759:INFO:Fitting Model
+2021-05-12 10:45:20,773:INFO:Evaluating Metrics
+2021-05-12 10:45:20,783:INFO:Compiling Metrics
+2021-05-12 10:45:20,806:INFO:Initializing Fold 10
+2021-05-12 10:45:20,814:INFO:Fitting Model
+2021-05-12 10:45:20,826:INFO:Evaluating Metrics
+2021-05-12 10:45:20,836:INFO:Compiling Metrics
+2021-05-12 10:45:20,856:INFO:Calculating mean and std
+2021-05-12 10:45:20,859:INFO:Creating metrics dataframe
+2021-05-12 10:45:20,873:INFO:Finalizing model
+2021-05-12 10:45:20,892:INFO:Uploading results into container
+2021-05-12 10:45:20,892:INFO:Uploading model into container now
+2021-05-12 10:45:20,946:INFO:create_model_container: 3
+2021-05-12 10:45:20,946:INFO:master_model_container: 3
+2021-05-12 10:45:20,946:INFO:display_container: 3
+2021-05-12 10:45:20,946:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:45:20,946:INFO:create_model() succesfully completed......................................
+2021-05-12 10:46:35,227:INFO:Initializing create_model()
+2021-05-12 10:46:35,227:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:46:35,227:INFO:Checking exceptions
+2021-05-12 10:46:35,227:INFO:Preloading libraries
+2021-05-12 10:46:35,227:INFO:Preparing display monitor
+2021-05-12 10:46:35,246:INFO:Copying training dataset
+2021-05-12 10:46:35,247:INFO:Importing libraries
+2021-05-12 10:46:35,248:INFO:Defining folds
+2021-05-12 10:46:35,248:INFO:Declaring metric variables
+2021-05-12 10:46:35,256:INFO:Importing untrained model
+2021-05-12 10:46:35,256:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:46:35,257:INFO:Checking ensemble method
+2021-05-12 10:46:35,267:INFO:Initializing Fold 1
+2021-05-12 10:46:35,278:INFO:Fitting Model
+2021-05-12 10:46:35,292:INFO:Evaluating Metrics
+2021-05-12 10:46:35,302:INFO:Compiling Metrics
+2021-05-12 10:46:35,330:INFO:Initializing Fold 2
+2021-05-12 10:46:35,338:INFO:Fitting Model
+2021-05-12 10:46:35,350:INFO:Evaluating Metrics
+2021-05-12 10:46:35,362:INFO:Compiling Metrics
+2021-05-12 10:46:35,388:INFO:Initializing Fold 3
+2021-05-12 10:46:35,396:INFO:Fitting Model
+2021-05-12 10:46:35,409:INFO:Evaluating Metrics
+2021-05-12 10:46:35,420:INFO:Compiling Metrics
+2021-05-12 10:46:35,441:INFO:Initializing Fold 4
+2021-05-12 10:46:35,448:INFO:Fitting Model
+2021-05-12 10:46:35,462:INFO:Evaluating Metrics
+2021-05-12 10:46:35,472:INFO:Compiling Metrics
+2021-05-12 10:46:35,492:INFO:Initializing Fold 5
+2021-05-12 10:46:35,499:INFO:Fitting Model
+2021-05-12 10:46:35,512:INFO:Evaluating Metrics
+2021-05-12 10:46:35,524:INFO:Compiling Metrics
+2021-05-12 10:46:35,547:INFO:Initializing Fold 6
+2021-05-12 10:46:35,553:INFO:Fitting Model
+2021-05-12 10:46:35,565:INFO:Evaluating Metrics
+2021-05-12 10:46:35,575:INFO:Compiling Metrics
+2021-05-12 10:46:35,598:INFO:Initializing Fold 7
+2021-05-12 10:46:35,605:INFO:Fitting Model
+2021-05-12 10:46:35,618:INFO:Evaluating Metrics
+2021-05-12 10:46:35,629:INFO:Compiling Metrics
+2021-05-12 10:46:35,651:INFO:Initializing Fold 8
+2021-05-12 10:46:35,658:INFO:Fitting Model
+2021-05-12 10:46:35,671:INFO:Evaluating Metrics
+2021-05-12 10:46:35,681:INFO:Compiling Metrics
+2021-05-12 10:46:35,704:INFO:Initializing Fold 9
+2021-05-12 10:46:35,713:INFO:Fitting Model
+2021-05-12 10:46:35,726:INFO:Evaluating Metrics
+2021-05-12 10:46:35,736:INFO:Compiling Metrics
+2021-05-12 10:46:35,757:INFO:Initializing Fold 10
+2021-05-12 10:46:35,766:INFO:Fitting Model
+2021-05-12 10:46:35,782:INFO:Evaluating Metrics
+2021-05-12 10:46:35,796:INFO:Compiling Metrics
+2021-05-12 10:46:35,821:INFO:Calculating mean and std
+2021-05-12 10:46:35,822:INFO:Creating metrics dataframe
+2021-05-12 10:46:35,833:INFO:Finalizing model
+2021-05-12 10:46:35,847:INFO:Uploading results into container
+2021-05-12 10:46:35,848:INFO:Uploading model into container now
+2021-05-12 10:46:35,911:INFO:create_model_container: 4
+2021-05-12 10:46:35,911:INFO:master_model_container: 4
+2021-05-12 10:46:35,911:INFO:display_container: 4
+2021-05-12 10:46:35,911:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=12, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:46:35,911:INFO:create_model() succesfully completed......................................
+2021-05-12 10:50:16,399:INFO:Initializing create_model()
+2021-05-12 10:50:16,399:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:50:16,399:INFO:Checking exceptions
+2021-05-12 10:50:16,399:INFO:Preloading libraries
+2021-05-12 10:50:16,399:INFO:Preparing display monitor
+2021-05-12 10:50:16,420:INFO:Copying training dataset
+2021-05-12 10:50:16,422:INFO:Importing libraries
+2021-05-12 10:50:16,423:INFO:Defining folds
+2021-05-12 10:50:16,423:INFO:Declaring metric variables
+2021-05-12 10:50:16,430:INFO:Importing untrained model
+2021-05-12 10:50:16,431:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:50:16,432:INFO:Checking ensemble method
+2021-05-12 10:50:16,444:INFO:Initializing Fold 1
+2021-05-12 10:50:16,454:INFO:Fitting Model
+2021-05-12 10:50:16,464:INFO:Evaluating Metrics
+2021-05-12 10:50:16,478:INFO:Compiling Metrics
+2021-05-12 10:50:16,502:INFO:Initializing Fold 2
+2021-05-12 10:50:16,509:INFO:Fitting Model
+2021-05-12 10:50:16,519:INFO:Evaluating Metrics
+2021-05-12 10:50:16,531:INFO:Compiling Metrics
+2021-05-12 10:50:16,553:INFO:Initializing Fold 3
+2021-05-12 10:50:16,562:INFO:Fitting Model
+2021-05-12 10:50:16,572:INFO:Evaluating Metrics
+2021-05-12 10:50:16,582:INFO:Compiling Metrics
+2021-05-12 10:50:16,604:INFO:Initializing Fold 4
+2021-05-12 10:50:16,612:INFO:Fitting Model
+2021-05-12 10:50:16,623:INFO:Evaluating Metrics
+2021-05-12 10:50:16,634:INFO:Compiling Metrics
+2021-05-12 10:50:16,660:INFO:Initializing Fold 5
+2021-05-12 10:50:16,671:INFO:Fitting Model
+2021-05-12 10:50:16,686:INFO:Evaluating Metrics
+2021-05-12 10:50:16,700:INFO:Compiling Metrics
+2021-05-12 10:50:16,723:INFO:Initializing Fold 6
+2021-05-12 10:50:16,731:INFO:Fitting Model
+2021-05-12 10:50:16,741:INFO:Evaluating Metrics
+2021-05-12 10:50:16,752:INFO:Compiling Metrics
+2021-05-12 10:50:16,773:INFO:Initializing Fold 7
+2021-05-12 10:50:16,780:INFO:Fitting Model
+2021-05-12 10:50:16,791:INFO:Evaluating Metrics
+2021-05-12 10:50:16,802:INFO:Compiling Metrics
+2021-05-12 10:50:16,825:INFO:Initializing Fold 8
+2021-05-12 10:50:16,832:INFO:Fitting Model
+2021-05-12 10:50:16,842:INFO:Evaluating Metrics
+2021-05-12 10:50:16,852:INFO:Compiling Metrics
+2021-05-12 10:50:16,876:INFO:Initializing Fold 9
+2021-05-12 10:50:16,883:INFO:Fitting Model
+2021-05-12 10:50:16,892:INFO:Evaluating Metrics
+2021-05-12 10:50:16,901:INFO:Compiling Metrics
+2021-05-12 10:50:16,921:INFO:Initializing Fold 10
+2021-05-12 10:50:16,929:INFO:Fitting Model
+2021-05-12 10:50:16,941:INFO:Evaluating Metrics
+2021-05-12 10:50:16,951:INFO:Compiling Metrics
+2021-05-12 10:50:16,975:INFO:Calculating mean and std
+2021-05-12 10:50:16,976:INFO:Creating metrics dataframe
+2021-05-12 10:50:16,986:INFO:Finalizing model
+2021-05-12 10:50:16,997:INFO:Uploading results into container
+2021-05-12 10:50:16,997:INFO:Uploading model into container now
+2021-05-12 10:50:17,044:INFO:create_model_container: 5
+2021-05-12 10:50:17,044:INFO:master_model_container: 5
+2021-05-12 10:50:17,044:INFO:display_container: 5
+2021-05-12 10:50:17,045:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=4, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:50:17,045:INFO:create_model() succesfully completed......................................
+2021-05-12 10:53:31,817:INFO:Initializing create_model()
+2021-05-12 10:53:31,818:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:53:31,818:INFO:Checking exceptions
+2021-05-12 10:53:31,818:INFO:Preloading libraries
+2021-05-12 10:53:31,818:INFO:Preparing display monitor
+2021-05-12 10:53:31,851:INFO:Copying training dataset
+2021-05-12 10:53:31,853:INFO:Importing libraries
+2021-05-12 10:53:31,854:INFO:Defining folds
+2021-05-12 10:53:31,854:INFO:Declaring metric variables
+2021-05-12 10:53:31,861:INFO:Importing untrained model
+2021-05-12 10:53:31,862:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:53:31,863:INFO:Checking ensemble method
+2021-05-12 10:53:31,877:INFO:Initializing Fold 1
+2021-05-12 10:53:31,885:INFO:Fitting Model
+2021-05-12 10:53:31,904:INFO:Evaluating Metrics
+2021-05-12 10:53:31,916:INFO:Compiling Metrics
+2021-05-12 10:53:31,938:INFO:Initializing Fold 2
+2021-05-12 10:53:31,947:INFO:Fitting Model
+2021-05-12 10:53:31,960:INFO:Evaluating Metrics
+2021-05-12 10:53:31,972:INFO:Compiling Metrics
+2021-05-12 10:53:31,994:INFO:Initializing Fold 3
+2021-05-12 10:53:32,004:INFO:Fitting Model
+2021-05-12 10:53:32,020:INFO:Evaluating Metrics
+2021-05-12 10:53:32,035:INFO:Compiling Metrics
+2021-05-12 10:53:32,062:INFO:Initializing Fold 4
+2021-05-12 10:53:32,069:INFO:Fitting Model
+2021-05-12 10:53:32,081:INFO:Evaluating Metrics
+2021-05-12 10:53:32,090:INFO:Compiling Metrics
+2021-05-12 10:53:32,114:INFO:Initializing Fold 5
+2021-05-12 10:53:32,121:INFO:Fitting Model
+2021-05-12 10:53:32,134:INFO:Evaluating Metrics
+2021-05-12 10:53:32,144:INFO:Compiling Metrics
+2021-05-12 10:53:32,168:INFO:Initializing Fold 6
+2021-05-12 10:53:32,176:INFO:Fitting Model
+2021-05-12 10:53:32,188:INFO:Evaluating Metrics
+2021-05-12 10:53:32,202:INFO:Compiling Metrics
+2021-05-12 10:53:32,225:INFO:Initializing Fold 7
+2021-05-12 10:53:32,233:INFO:Fitting Model
+2021-05-12 10:53:32,254:INFO:Evaluating Metrics
+2021-05-12 10:53:32,272:INFO:Compiling Metrics
+2021-05-12 10:53:32,297:INFO:Initializing Fold 8
+2021-05-12 10:53:32,306:INFO:Fitting Model
+2021-05-12 10:53:32,319:INFO:Evaluating Metrics
+2021-05-12 10:53:32,331:INFO:Compiling Metrics
+2021-05-12 10:53:32,353:INFO:Initializing Fold 9
+2021-05-12 10:53:32,359:INFO:Fitting Model
+2021-05-12 10:53:32,375:INFO:Evaluating Metrics
+2021-05-12 10:53:32,389:INFO:Compiling Metrics
+2021-05-12 10:53:32,409:INFO:Initializing Fold 10
+2021-05-12 10:53:32,418:INFO:Fitting Model
+2021-05-12 10:53:32,430:INFO:Evaluating Metrics
+2021-05-12 10:53:32,439:INFO:Compiling Metrics
+2021-05-12 10:53:32,459:INFO:Calculating mean and std
+2021-05-12 10:53:32,461:INFO:Creating metrics dataframe
+2021-05-12 10:53:32,471:INFO:Finalizing model
+2021-05-12 10:53:32,486:INFO:Uploading results into container
+2021-05-12 10:53:32,487:INFO:Uploading model into container now
+2021-05-12 10:53:32,547:INFO:create_model_container: 6
+2021-05-12 10:53:32,548:INFO:master_model_container: 6
+2021-05-12 10:53:32,548:INFO:display_container: 6
+2021-05-12 10:53:32,548:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=12, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=332, splitter='best')
+2021-05-12 10:53:32,548:INFO:create_model() succesfully completed......................................
+2021-05-12 10:55:25,868:INFO:Initializing create_model()
+2021-05-12 10:55:25,868:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:55:25,868:INFO:Checking exceptions
+2021-05-12 10:55:25,868:INFO:Preloading libraries
+2021-05-12 10:55:25,868:INFO:Preparing display monitor
+2021-05-12 10:55:25,891:INFO:Copying training dataset
+2021-05-12 10:55:25,892:INFO:Importing libraries
+2021-05-12 10:55:25,893:INFO:Defining folds
+2021-05-12 10:55:25,894:INFO:Declaring metric variables
+2021-05-12 10:55:25,901:INFO:Importing untrained model
+2021-05-12 10:56:56,949:INFO:Initializing set_config()
+2021-05-12 10:56:56,949:INFO:set_config(variable=seed, value=7940)
+2021-05-12 10:56:56,949:INFO:Global variable:  seed updated
+2021-05-12 10:56:56,950:INFO:set_config() succesfully completed......................................
+2021-05-12 10:56:56,950:INFO:Initializing create_model()
+2021-05-12 10:56:56,950:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:56:56,950:INFO:Checking exceptions
+2021-05-12 10:56:56,950:INFO:Preloading libraries
+2021-05-12 10:56:56,950:INFO:Preparing display monitor
+2021-05-12 10:56:56,968:INFO:Copying training dataset
+2021-05-12 10:56:56,969:INFO:Importing libraries
+2021-05-12 10:56:56,970:INFO:Defining folds
+2021-05-12 10:56:56,970:INFO:Declaring metric variables
+2021-05-12 10:56:56,974:INFO:Importing untrained model
+2021-05-12 10:56:56,974:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:56:56,975:INFO:Checking ensemble method
+2021-05-12 10:56:56,983:INFO:Initializing Fold 1
+2021-05-12 10:56:56,990:INFO:Fitting Model
+2021-05-12 10:56:57,003:INFO:Evaluating Metrics
+2021-05-12 10:56:57,016:INFO:Compiling Metrics
+2021-05-12 10:56:57,036:INFO:Initializing Fold 2
+2021-05-12 10:56:57,042:INFO:Fitting Model
+2021-05-12 10:56:57,055:INFO:Evaluating Metrics
+2021-05-12 10:56:57,067:INFO:Compiling Metrics
+2021-05-12 10:56:57,093:INFO:Initializing Fold 3
+2021-05-12 10:56:57,099:INFO:Fitting Model
+2021-05-12 10:56:57,111:INFO:Evaluating Metrics
+2021-05-12 10:56:57,123:INFO:Compiling Metrics
+2021-05-12 10:56:57,146:INFO:Initializing Fold 4
+2021-05-12 10:56:57,159:INFO:Fitting Model
+2021-05-12 10:56:57,173:INFO:Evaluating Metrics
+2021-05-12 10:56:57,185:INFO:Compiling Metrics
+2021-05-12 10:56:57,209:INFO:Initializing Fold 5
+2021-05-12 10:56:57,220:INFO:Fitting Model
+2021-05-12 10:56:57,234:INFO:Evaluating Metrics
+2021-05-12 10:56:57,248:INFO:Compiling Metrics
+2021-05-12 10:56:57,273:INFO:Initializing Fold 6
+2021-05-12 10:56:57,284:INFO:Fitting Model
+2021-05-12 10:56:57,301:INFO:Evaluating Metrics
+2021-05-12 10:56:57,318:INFO:Compiling Metrics
+2021-05-12 10:56:57,340:INFO:Initializing Fold 7
+2021-05-12 10:56:57,346:INFO:Fitting Model
+2021-05-12 10:56:57,362:INFO:Evaluating Metrics
+2021-05-12 10:56:57,376:INFO:Compiling Metrics
+2021-05-12 10:56:57,395:INFO:Initializing Fold 8
+2021-05-12 10:56:57,401:INFO:Fitting Model
+2021-05-12 10:56:57,414:INFO:Evaluating Metrics
+2021-05-12 10:56:57,422:INFO:Compiling Metrics
+2021-05-12 10:56:57,445:INFO:Initializing Fold 9
+2021-05-12 10:56:57,456:INFO:Fitting Model
+2021-05-12 10:56:57,469:INFO:Evaluating Metrics
+2021-05-12 10:56:57,479:INFO:Compiling Metrics
+2021-05-12 10:56:57,501:INFO:Initializing Fold 10
+2021-05-12 10:56:57,510:INFO:Fitting Model
+2021-05-12 10:56:57,523:INFO:Evaluating Metrics
+2021-05-12 10:56:57,533:INFO:Compiling Metrics
+2021-05-12 10:56:57,556:INFO:Calculating mean and std
+2021-05-12 10:56:57,558:INFO:Creating metrics dataframe
+2021-05-12 10:56:57,569:INFO:Finalizing model
+2021-05-12 10:56:57,585:INFO:Uploading results into container
+2021-05-12 10:56:57,585:INFO:Uploading model into container now
+2021-05-12 10:56:57,634:INFO:create_model_container: 7
+2021-05-12 10:56:57,634:INFO:master_model_container: 7
+2021-05-12 10:56:57,634:INFO:display_container: 7
+2021-05-12 10:56:57,635:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=12, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=7940, splitter='best')
+2021-05-12 10:56:57,635:INFO:create_model() succesfully completed......................................
+2021-05-12 10:58:41,442:INFO:PyCaret Classification Module
+2021-05-12 10:58:41,442:INFO:version 2.0
+2021-05-12 10:58:41,442:INFO:Initializing setup()
+2021-05-12 10:58:41,442:INFO:USI: 2d52
+2021-05-12 10:58:41,442:INFO:setup(data=(4211, 40), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Fouls_conceded', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Own_goals', 'Defender', 'DefenderSubstitute', 'Forward', 'ForwardSubstitute', 'Goalkeeper', 'GoalkeeperSubstitute', 'Midfielder', 'MidfielderSubstitute'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-12 10:58:41,442:INFO:Checking environment
+2021-05-12 10:58:41,443:INFO:python_version: 3.6.9
+2021-05-12 10:58:41,443:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-12 10:58:41,443:INFO:machine: x86_64
+2021-05-12 10:58:41,444:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-12 10:58:41,445:INFO:Memory: svmem(total=16493772800, available=8140439552, percent=50.6, used=6700855296, free=2716065792, active=9799294976, inactive=2285580288, buffers=1561309184, cached=5515542528, shared=1300475904, slab=1190944768)
+2021-05-12 10:58:41,446:INFO:Physical Core: 4
+2021-05-12 10:58:41,446:INFO:Logical Core: 8
+2021-05-12 10:58:41,446:INFO:Checking libraries
+2021-05-12 10:58:41,446:INFO:pd==1.0.5
+2021-05-12 10:58:41,446:INFO:numpy==1.18.5
+2021-05-12 10:58:41,446:INFO:sklearn==0.23.2
+2021-05-12 10:58:41,446:INFO:xgboost==1.1.1
+2021-05-12 10:58:41,451:INFO:lightgbm==2.3.1
+2021-05-12 10:58:41,462:INFO:catboost==0.24
+2021-05-12 10:58:41,967:INFO:mlflow==1.10.0
+2021-05-12 10:58:41,967:INFO:Checking Exceptions
+2021-05-12 10:58:41,967:INFO:Preloading libraries
+2021-05-12 10:58:41,967:INFO:Preparing display monitor
+2021-05-12 10:58:41,983:INFO:Importing libraries
+2021-05-12 10:58:42,386:INFO:Copying data for preprocessing
+2021-05-12 10:58:42,386:INFO:Declaring global variables
+2021-05-12 10:58:42,396:INFO:Declaring preprocessing parameters
+2021-05-12 10:58:42,396:INFO:Importing preprocessing module
+2021-05-12 10:58:42,868:INFO:Creating preprocessing pipeline
+2021-05-12 10:59:03,692:INFO:Preprocessing pipeline created successfully
+2021-05-12 10:59:03,692:INFO:Creating grid variables
+2021-05-12 10:59:03,696:INFO:Creating global containers
+2021-05-12 10:59:03,788:INFO:create_model_container 0
+2021-05-12 10:59:03,788:INFO:master_model_container 0
+2021-05-12 10:59:03,789:INFO:display_container 0
+2021-05-12 10:59:03,803:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-12 10:59:03,803:INFO:setup() succesfully completed......................................
+2021-05-12 10:59:10,695:INFO:Initializing set_config()
+2021-05-12 10:59:10,695:INFO:set_config(variable=seed, value=7940)
+2021-05-12 10:59:10,696:INFO:Global variable:  seed updated
+2021-05-12 10:59:10,696:INFO:set_config() succesfully completed......................................
+2021-05-12 10:59:10,696:INFO:Initializing create_model()
+2021-05-12 10:59:10,696:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 10:59:10,696:INFO:Checking exceptions
+2021-05-12 10:59:10,696:INFO:Preloading libraries
+2021-05-12 10:59:10,697:INFO:Preparing display monitor
+2021-05-12 10:59:10,746:INFO:Copying training dataset
+2021-05-12 10:59:10,748:INFO:Importing libraries
+2021-05-12 10:59:10,749:INFO:Defining folds
+2021-05-12 10:59:10,749:INFO:Declaring metric variables
+2021-05-12 10:59:10,756:INFO:Importing untrained model
+2021-05-12 10:59:10,756:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 10:59:10,757:INFO:Checking ensemble method
+2021-05-12 10:59:10,766:INFO:Initializing Fold 1
+2021-05-12 10:59:10,772:INFO:Fitting Model
+2021-05-12 10:59:10,784:INFO:Evaluating Metrics
+2021-05-12 10:59:10,797:INFO:Compiling Metrics
+2021-05-12 10:59:10,821:INFO:Initializing Fold 2
+2021-05-12 10:59:10,829:INFO:Fitting Model
+2021-05-12 10:59:10,843:INFO:Evaluating Metrics
+2021-05-12 10:59:10,859:INFO:Compiling Metrics
+2021-05-12 10:59:10,877:INFO:Initializing Fold 3
+2021-05-12 10:59:10,882:INFO:Fitting Model
+2021-05-12 10:59:10,893:INFO:Evaluating Metrics
+2021-05-12 10:59:10,903:INFO:Compiling Metrics
+2021-05-12 10:59:10,925:INFO:Initializing Fold 4
+2021-05-12 10:59:10,935:INFO:Fitting Model
+2021-05-12 10:59:10,954:INFO:Evaluating Metrics
+2021-05-12 10:59:10,972:INFO:Compiling Metrics
+2021-05-12 10:59:10,999:INFO:Initializing Fold 5
+2021-05-12 10:59:11,006:INFO:Fitting Model
+2021-05-12 10:59:11,018:INFO:Evaluating Metrics
+2021-05-12 10:59:11,027:INFO:Compiling Metrics
+2021-05-12 10:59:11,048:INFO:Initializing Fold 6
+2021-05-12 10:59:11,059:INFO:Fitting Model
+2021-05-12 10:59:11,078:INFO:Evaluating Metrics
+2021-05-12 10:59:11,094:INFO:Compiling Metrics
+2021-05-12 10:59:11,117:INFO:Initializing Fold 7
+2021-05-12 10:59:11,129:INFO:Fitting Model
+2021-05-12 10:59:11,150:INFO:Evaluating Metrics
+2021-05-12 10:59:11,160:INFO:Compiling Metrics
+2021-05-12 10:59:11,178:INFO:Initializing Fold 8
+2021-05-12 10:59:11,186:INFO:Fitting Model
+2021-05-12 10:59:11,200:INFO:Evaluating Metrics
+2021-05-12 10:59:11,215:INFO:Compiling Metrics
+2021-05-12 10:59:11,246:INFO:Initializing Fold 9
+2021-05-12 10:59:11,254:INFO:Fitting Model
+2021-05-12 10:59:11,268:INFO:Evaluating Metrics
+2021-05-12 10:59:11,279:INFO:Compiling Metrics
+2021-05-12 10:59:11,302:INFO:Initializing Fold 10
+2021-05-12 10:59:11,312:INFO:Fitting Model
+2021-05-12 10:59:11,323:INFO:Evaluating Metrics
+2021-05-12 10:59:11,333:INFO:Compiling Metrics
+2021-05-12 10:59:11,356:INFO:Calculating mean and std
+2021-05-12 10:59:11,358:INFO:Creating metrics dataframe
+2021-05-12 10:59:11,373:INFO:Finalizing model
+2021-05-12 10:59:11,396:INFO:Uploading results into container
+2021-05-12 10:59:11,396:INFO:Uploading model into container now
+2021-05-12 10:59:11,462:INFO:create_model_container: 1
+2021-05-12 10:59:11,462:INFO:master_model_container: 1
+2021-05-12 10:59:11,462:INFO:display_container: 1
+2021-05-12 10:59:11,463:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=12, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=7940, splitter='best')
+2021-05-12 10:59:11,463:INFO:create_model() succesfully completed......................................
+2021-05-12 11:00:45,819:INFO:Initializing set_config()
+2021-05-12 11:00:45,820:INFO:set_config(variable=seed, value=7940)
+2021-05-12 11:00:45,820:INFO:Global variable:  seed updated
+2021-05-12 11:00:45,820:INFO:set_config() succesfully completed......................................
+2021-05-12 11:00:45,821:INFO:Initializing create_model()
+2021-05-12 11:00:45,821:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 11:00:45,821:INFO:Checking exceptions
+2021-05-12 11:00:45,821:INFO:Preloading libraries
+2021-05-12 11:00:45,821:INFO:Preparing display monitor
+2021-05-12 11:00:45,859:INFO:Copying training dataset
+2021-05-12 11:00:45,861:INFO:Importing libraries
+2021-05-12 11:00:45,862:INFO:Defining folds
+2021-05-12 11:00:45,862:INFO:Declaring metric variables
+2021-05-12 11:00:45,870:INFO:Importing untrained model
+2021-05-12 11:00:45,870:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 11:00:45,871:INFO:Checking ensemble method
+2021-05-12 11:00:45,887:INFO:Initializing Fold 1
+2021-05-12 11:00:45,896:INFO:Fitting Model
+2021-05-12 11:00:45,913:INFO:Evaluating Metrics
+2021-05-12 11:00:45,926:INFO:Compiling Metrics
+2021-05-12 11:00:45,948:INFO:Initializing Fold 2
+2021-05-12 11:00:45,957:INFO:Fitting Model
+2021-05-12 11:00:45,971:INFO:Evaluating Metrics
+2021-05-12 11:00:45,985:INFO:Compiling Metrics
+2021-05-12 11:00:46,011:INFO:Initializing Fold 3
+2021-05-12 11:00:46,018:INFO:Fitting Model
+2021-05-12 11:00:46,032:INFO:Evaluating Metrics
+2021-05-12 11:00:46,046:INFO:Compiling Metrics
+2021-05-12 11:00:46,067:INFO:Initializing Fold 4
+2021-05-12 11:00:46,074:INFO:Fitting Model
+2021-05-12 11:00:46,085:INFO:Evaluating Metrics
+2021-05-12 11:00:46,095:INFO:Compiling Metrics
+2021-05-12 11:00:46,121:INFO:Initializing Fold 5
+2021-05-12 11:00:46,126:INFO:Fitting Model
+2021-05-12 11:00:46,139:INFO:Evaluating Metrics
+2021-05-12 11:00:46,149:INFO:Compiling Metrics
+2021-05-12 11:00:46,167:INFO:Initializing Fold 6
+2021-05-12 11:00:46,178:INFO:Fitting Model
+2021-05-12 11:00:46,195:INFO:Evaluating Metrics
+2021-05-12 11:00:46,207:INFO:Compiling Metrics
+2021-05-12 11:00:46,230:INFO:Initializing Fold 7
+2021-05-12 11:00:46,237:INFO:Fitting Model
+2021-05-12 11:00:46,249:INFO:Evaluating Metrics
+2021-05-12 11:00:46,260:INFO:Compiling Metrics
+2021-05-12 11:00:46,281:INFO:Initializing Fold 8
+2021-05-12 11:00:46,291:INFO:Fitting Model
+2021-05-12 11:00:46,309:INFO:Evaluating Metrics
+2021-05-12 11:00:46,321:INFO:Compiling Metrics
+2021-05-12 11:00:46,341:INFO:Initializing Fold 9
+2021-05-12 11:00:46,350:INFO:Fitting Model
+2021-05-12 11:00:46,366:INFO:Evaluating Metrics
+2021-05-12 11:00:46,378:INFO:Compiling Metrics
+2021-05-12 11:00:46,401:INFO:Initializing Fold 10
+2021-05-12 11:00:46,409:INFO:Fitting Model
+2021-05-12 11:00:46,421:INFO:Evaluating Metrics
+2021-05-12 11:00:46,430:INFO:Compiling Metrics
+2021-05-12 11:00:46,452:INFO:Calculating mean and std
+2021-05-12 11:00:46,455:INFO:Creating metrics dataframe
+2021-05-12 11:00:46,471:INFO:Finalizing model
+2021-05-12 11:00:46,496:INFO:Uploading results into container
+2021-05-12 11:00:46,496:INFO:Uploading model into container now
+2021-05-12 11:00:46,558:INFO:create_model_container: 2
+2021-05-12 11:00:46,558:INFO:master_model_container: 2
+2021-05-12 11:00:46,558:INFO:display_container: 2
+2021-05-12 11:00:46,558:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=7940, splitter='best')
+2021-05-12 11:00:46,559:INFO:create_model() succesfully completed......................................
+2021-05-12 11:03:11,695:INFO:PyCaret Classification Module
+2021-05-12 11:03:11,695:INFO:version 2.0
+2021-05-12 11:03:11,695:INFO:Initializing setup()
+2021-05-12 11:03:11,696:INFO:USI: b1a4
+2021-05-12 11:03:11,696:INFO:setup(data=(4211, 33), target=gender, train_size=0.7, sampling=True, sample_estimator=None, categorical_features=None, categorical_imputation=constant, ordinal_features=None,
+                    high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=['Passes', 'Successful_passes', 'Unsuccessful_passes', 'Crosses', 'Successful_crosses', 'Unsuccessful_crosses', 'Long_passes', 'Long_passes_won', 'Long_passes_lost', 'Aerial', 'Aerial_won', 'Aerial_lost', 'Ground_duels', 'Ground_duels_won', 'Ground_duels_lost', 'Free_kicks', 'Fouls_received', 'Fouls_conceded', 'Corners', 'Corners_successful', 'Corners_unsuccessful', 'Interceptions', 'Saves', 'Clearances', 'Shots', 'Shots_on_target', 'Shots_off_target', 'Goals', 'Goals_from_penalty', 'Own_goals'], numeric_imputation=mean, date_features=None, ignore_features=None, normalize=False,
+                    normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear,
+                    pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05,
+                    remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=False, create_clusters=False, cluster_iter=20,
+                    polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None,
+                    group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01,
+                    fix_imbalance=False, fix_imbalance_method=None, data_split_shuffle=True, folds_shuffle=False, n_jobs=-1, html=True, session_id=None, log_experiment=False,
+                    experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False)
+2021-05-12 11:03:11,696:INFO:Checking environment
+2021-05-12 11:03:11,696:INFO:python_version: 3.6.9
+2021-05-12 11:03:11,696:INFO:python_build: ('default', 'Jul 30 2019 19:07:31')
+2021-05-12 11:03:11,696:INFO:machine: x86_64
+2021-05-12 11:03:11,698:INFO:platform: Linux-5.4.0-72-generic-x86_64-with-debian-bullseye-sid
+2021-05-12 11:03:11,699:INFO:Memory: svmem(total=16493772800, available=8091561984, percent=50.9, used=6711468032, free=2622480384, active=9894838272, inactive=2245242880, buffers=1564119040, cached=5595705344, shared=1338744832, slab=1191960576)
+2021-05-12 11:03:11,700:INFO:Physical Core: 4
+2021-05-12 11:03:11,700:INFO:Logical Core: 8
+2021-05-12 11:03:11,700:INFO:Checking libraries
+2021-05-12 11:03:11,700:INFO:pd==1.0.5
+2021-05-12 11:03:11,700:INFO:numpy==1.18.5
+2021-05-12 11:03:11,700:INFO:sklearn==0.23.2
+2021-05-12 11:03:11,701:INFO:xgboost==1.1.1
+2021-05-12 11:03:11,710:INFO:lightgbm==2.3.1
+2021-05-12 11:03:11,725:INFO:catboost==0.24
+2021-05-12 11:03:12,231:INFO:mlflow==1.10.0
+2021-05-12 11:03:12,231:INFO:Checking Exceptions
+2021-05-12 11:03:12,232:INFO:Preloading libraries
+2021-05-12 11:03:12,232:INFO:Preparing display monitor
+2021-05-12 11:03:12,248:INFO:Importing libraries
+2021-05-12 11:03:12,647:INFO:Copying data for preprocessing
+2021-05-12 11:03:12,648:INFO:Declaring global variables
+2021-05-12 11:03:12,657:INFO:Declaring preprocessing parameters
+2021-05-12 11:03:12,658:INFO:Importing preprocessing module
+2021-05-12 11:03:13,116:INFO:Creating preprocessing pipeline
+2021-05-12 11:03:15,339:INFO:Preprocessing pipeline created successfully
+2021-05-12 11:03:15,339:INFO:Creating grid variables
+2021-05-12 11:03:15,341:INFO:Creating global containers
+2021-05-12 11:03:15,461:INFO:create_model_container 0
+2021-05-12 11:03:15,461:INFO:master_model_container 0
+2021-05-12 11:03:15,461:INFO:display_container 0
+2021-05-12 11:03:15,470:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      ml_usecase='classification',
+                                      numerical_features=['Passes',
+                                                          'Successful_passes',
+                                                          'Unsuccessful_passes',
+                                                          'Crosses',
+                                                          'Successful_crosses',
+                                                          'Unsuccessful_crosses',
+                                                          'Long_passes',
+                                                          'Long_passes_won',
+                                                          'Long_passes_lost',
+                                                          'Aerial',
+                                                          'Aerial_won',
+                                                          'Ae...
+                ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),
+                ('P_transform', Empty()), ('pt_target', Empty()),
+                ('binn', Empty()), ('rem_outliers', Empty()),
+                ('cluster_all', Empty()), ('dummy', Dummify(target='gender')),
+                ('fix_perfect', Empty()), ('clean_names', Clean_Colum_Names()),
+                ('feature_select', Empty()), ('fix_multi', Empty()),
+                ('dfs', Empty()), ('pca', Empty())],
+         verbose=False)
+2021-05-12 11:03:15,470:INFO:setup() succesfully completed......................................
+2021-05-12 11:03:19,263:INFO:Initializing set_config()
+2021-05-12 11:03:19,263:INFO:set_config(variable=seed, value=7940)
+2021-05-12 11:03:19,263:INFO:Global variable:  seed updated
+2021-05-12 11:03:19,263:INFO:set_config() succesfully completed......................................
+2021-05-12 11:03:19,264:INFO:Initializing create_model()
+2021-05-12 11:03:19,264:INFO:create_model(estimator=dt, ensemble=False, method=None, fold=10, round=4, cross_validation=True, verbose=True, system=True)
+2021-05-12 11:03:19,264:INFO:Checking exceptions
+2021-05-12 11:03:19,264:INFO:Preloading libraries
+2021-05-12 11:03:19,264:INFO:Preparing display monitor
+2021-05-12 11:03:19,305:INFO:Copying training dataset
+2021-05-12 11:03:19,307:INFO:Importing libraries
+2021-05-12 11:03:19,308:INFO:Defining folds
+2021-05-12 11:03:19,309:INFO:Declaring metric variables
+2021-05-12 11:03:19,316:INFO:Importing untrained model
+2021-05-12 11:03:19,316:INFO:Decision Tree Classifier Imported succesfully
+2021-05-12 11:03:19,317:INFO:Checking ensemble method
+2021-05-12 11:03:19,327:INFO:Initializing Fold 1
+2021-05-12 11:03:19,336:INFO:Fitting Model
+2021-05-12 11:03:19,350:INFO:Evaluating Metrics
+2021-05-12 11:03:19,365:INFO:Compiling Metrics
+2021-05-12 11:03:19,389:INFO:Initializing Fold 2
+2021-05-12 11:03:19,397:INFO:Fitting Model
+2021-05-12 11:03:19,411:INFO:Evaluating Metrics
+2021-05-12 11:03:19,424:INFO:Compiling Metrics
+2021-05-12 11:03:19,443:INFO:Initializing Fold 3
+2021-05-12 11:03:19,448:INFO:Fitting Model
+2021-05-12 11:03:19,459:INFO:Evaluating Metrics
+2021-05-12 11:03:19,469:INFO:Compiling Metrics
+2021-05-12 11:03:19,485:INFO:Initializing Fold 4
+2021-05-12 11:03:19,490:INFO:Fitting Model
+2021-05-12 11:03:19,500:INFO:Evaluating Metrics
+2021-05-12 11:03:19,508:INFO:Compiling Metrics
+2021-05-12 11:03:19,528:INFO:Initializing Fold 5
+2021-05-12 11:03:19,534:INFO:Fitting Model
+2021-05-12 11:03:19,547:INFO:Evaluating Metrics
+2021-05-12 11:03:19,560:INFO:Compiling Metrics
+2021-05-12 11:03:19,580:INFO:Initializing Fold 6
+2021-05-12 11:03:19,586:INFO:Fitting Model
+2021-05-12 11:03:19,601:INFO:Evaluating Metrics
+2021-05-12 11:03:19,614:INFO:Compiling Metrics
+2021-05-12 11:03:19,636:INFO:Initializing Fold 7
+2021-05-12 11:03:19,643:INFO:Fitting Model
+2021-05-12 11:03:19,656:INFO:Evaluating Metrics
+2021-05-12 11:03:19,668:INFO:Compiling Metrics
+2021-05-12 11:03:19,689:INFO:Initializing Fold 8
+2021-05-12 11:03:19,695:INFO:Fitting Model
+2021-05-12 11:03:19,708:INFO:Evaluating Metrics
+2021-05-12 11:03:19,717:INFO:Compiling Metrics
+2021-05-12 11:03:19,738:INFO:Initializing Fold 9
+2021-05-12 11:03:19,746:INFO:Fitting Model
+2021-05-12 11:03:19,760:INFO:Evaluating Metrics
+2021-05-12 11:03:19,773:INFO:Compiling Metrics
+2021-05-12 11:03:19,795:INFO:Initializing Fold 10
+2021-05-12 11:03:19,801:INFO:Fitting Model
+2021-05-12 11:03:19,814:INFO:Evaluating Metrics
+2021-05-12 11:03:19,826:INFO:Compiling Metrics
+2021-05-12 11:03:19,852:INFO:Calculating mean and std
+2021-05-12 11:03:19,854:INFO:Creating metrics dataframe
+2021-05-12 11:03:19,865:INFO:Finalizing model
+2021-05-12 11:03:19,880:INFO:Uploading results into container
+2021-05-12 11:03:19,880:INFO:Uploading model into container now
+2021-05-12 11:03:19,929:INFO:create_model_container: 1
+2021-05-12 11:03:19,929:INFO:master_model_container: 1
+2021-05-12 11:03:19,929:INFO:display_container: 1
+2021-05-12 11:03:19,929:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='entropy',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=40, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=7940, splitter='best')
+2021-05-12 11:03:19,930:INFO:create_model() succesfully completed......................................

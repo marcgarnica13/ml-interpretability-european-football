@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from plotly.subplots import make_subplots
 import plotly.express as px
 import plotly.graph_objects as go
-data_folder_path = os.path.join('gender_analysis', 'data')
+data_folder_path = os.path.join('..', 'data')
 data_file = 'ds.csv'
 
 df = pd.read_csv(os.path.join(data_folder_path, data_file))
